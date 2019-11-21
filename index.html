@@ -62,7 +62,7 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="welcome-to-mint-metabolomics-integrator">Welcome to MINT (Metabolomics Integrator)</h1>
-<p>MINT is an app for summing up intensity values from mass spectrometry (MS) files in <code>mzML</code> and <code>mzXML</code> format. The tool extracts data within specified windows of retention time and m/z-values using a pre-defined list of peaks that can be changed from project to project. Therefore, the tool allows to reproduciblibly extract data from large numbers of MS files.</p>
+<p>MINT is an app for summing up intensity values from consistent mass spectrometry (MS) files in <code>mzML</code> and <code>mzXML</code> format. The tool extracts data within specified windows of retention time and m/z-values using a pre-defined list of peaks that can be changed from project to project. Therefore, the tool allows to reproduciblibly extract data from large numbers of MS files.</p>
 <p>The app's frontend is build using <a href="https://plot.ly/dash/">Plotly-Dash</a> and runs locally in a browser. Thought, the Python functions provided can be imported and used in any python project.</p>
 <h1 id="installation">Installation</h1>
 <p>Here we use <code>conda</code> from the <a href="https://conda.io/en/latest/miniconda.html">miniconda</a> (or alternatively <code>anaconda</code>) package to install dependencies in a virtual environment.</p>
@@ -85,13 +85,21 @@ python scripts/Mint.py  # Under Windows
 <pre><code>http://localhost:9999/
 </code></pre>
 <h1 id="a-typical-workflow">A typical workflow</h1>
-<p>Individual files can be added to an in worklist using the <code>ADD FILE(S)</code> button. If the checkbox <code>Add files from directory</code> is checked, all files from a directory and its subdirectories are imported that end on <code>mzXML</code> or <code>mzML</code> (not yet supported). The box is checked by default.</p>
+<p>Individual files can be added to an in worklist using the <code>ADD FILE(S)</code> button. If the checkbox <code>Add files from directory</code> is checked, all files from a directory and its subdirectories are imported that end on <code>mzXML</code> or <code>mzML</code> (not yet supported). The box is checked by default. Note that files are always added to the worklist. The worklist can be cleared with the <code>CLEAR FILES</code> button, which has no effect on the selected peaklists.</p>
 <p>A standard peaklist is provided. A user defined peaklist can be selected and used with the <code>SELECT PEAKLIST FILE(S)</code> button.</p>
 <p><img alt="Demo Image" src="image/mint1.png" title="Demo image" />
 <img alt="Demo Image" src="image/mint2.png" title="Demo image" />
 <img alt="Demo Image" src="image/mint3.png" title="Demo image" />
 <img alt="Demo Image" src="image/mint4.png" title="Demo image" /></p>
-<h1 id="peaklists">Peaklists</h1></div>
+<h1 id="peaklists">Peaklists</h1>
+<p>A peaklists contains the definitions of peaks that are extracted. A peak is defined by five properties:</p>
+<ul>
+<li>peakLabel: A unique identifier such as the biomarker name or ID</li>
+<li>peakMz: The target mass (m/z-value)</li>
+<li>peakMzWidth[ppm]: The width of the peak in the m/z-dimension in units of ppm (peakMz/1e6)</li>
+<li>rtmin: The start retention time for each peak.</li>
+<li>rtmax: The final retention time for each peak.</li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
@@ -174,5 +182,5 @@ python scripts/Mint.py  # Under Windows
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-21 19:29:48
+Build Date UTC : 2019-11-21 19:37:35
 -->
