@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        
-        
+        <meta name="author" content="Soren Wacker">
+        <link rel="canonical" href="https://github.com/soerendip/ms-mint/peaklists/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>The GUI - MINT (Metabolomics Integrator)</title>
+        <title>Peaklists - MINT (Metabolomics Integrator)</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -50,7 +50,10 @@
                                 <a href="..">Home</a>
                             </li>
                             <li class="active">
-                                <a href="./">The GUI</a>
+                                <a href="./">Peaklists</a>
+                            </li>
+                            <li >
+                                <a href="../license/">License</a>
                             </li>
                         </ul>
 
@@ -65,8 +68,8 @@
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li class="disabled">
-                                <a rel="prev" >
+                            <li >
+                                <a rel="prev" href="../license/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -78,18 +81,35 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#the-gui">The GUI</a></li>
+        <li class="main active"><a href="#peaklists">Peaklists</a></li>
+            <li><a href="#peaklabel">peakLabel</a></li>
+            <li><a href="#peakmz">peakMz</a></li>
+            <li><a href="#peakmzwidthppm">peakMzWidth[ppm]</a></li>
+            <li><a href="#rtmin">rtmin</a></li>
+            <li><a href="#rtmax">rtmax</a></li>
+            <li><a href="#example-peaklist">Example Peaklist</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="the-gui">The GUI</h1>
-<p>Individual files can be added to an in worklist using the <code>ADD FILE(S)</code> button. If the checkbox <code>Add files from directory</code> is checked, all files from a directory and its subdirectories are imported that end on <code>mzXML</code> or <code>mzML</code> (not yet supported). The box is checked by default. Note that files are always added to the worklist. The worklist can be cleared with the <code>CLEAR FILES</code> button, which has no effect on the selected peaklists.</p>
-<p>A standard peaklist is provided. A user defined peaklist can be selected and used with the <code>SELECT PEAKLIST FILE(S)</code> button.</p>
-<p><img alt="Demo Image" src="../image/mint1.png" title="Demo image" />
-<img alt="Demo Image" src="../image/mint2.png" title="Demo image" />
-<img alt="Demo Image" src="../image/mint3.png" title="Demo image" />
-<img alt="Demo Image" src="../image/mint4.png" title="Demo image" /></p></div>
+<h1 id="peaklists">Peaklists</h1>
+<p>A peaklist is the protocol that captures how data is going to be extracted from the individual MS-files. It is provided as <code>csv</code> file and essentially contains the definitions of peaks to be extracted. A single peak is defined by five properties that need to be present as headers in the <code>csv</code> file.</p>
+<h4 id="peaklabel">peakLabel</h4>
+<p>A unique identifier such as the biomarker name or ID</p>
+<h4 id="peakmz">peakMz</h4>
+<p>The target mass (m/z-value)</p>
+<h4 id="peakmzwidthppm">peakMzWidth[ppm]</h4>
+<p>The width of the peak in the m/z-dimension in units of ppm (peakMz/1e6)</p>
+<h4 id="rtmin">rtmin</h4>
+<p>The start of the retention time for each peak in seconds.</p>
+<h4 id="rtmax">rtmax</h4>
+<p>The end of the retention time for each peak in seconds.</p>
+<h2 id="example-peaklist">Example Peaklist</h2>
+<p><code>peaklist.csv</code></p>
+<pre><code class="text">peakLabel,peakMz,peakMzWidth[ppm],rtmin,rtmax
+Arabitol,151.0605,10,4.65,5.2
+Xanthine,151.02585,10,4.18,4.53
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
