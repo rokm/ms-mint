@@ -61,10 +61,10 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="welcome-to-mint-metabolomics-integrator">Welcome to MINT (Metabolomics Integrator)</h1>
-<p>MINT is an app for summing up intensity values from mass spectrometry (MS) files in <code>mzML</code> and <code>mzXML</code> format. The tool extracts data within specified windows of retention time and m/z values using a pre-defined list of peaks that can be changed from project to project. Therefore, the tool reproduciblibly extracts data from MS files</p>
+<p>MINT is an app for summing up intensity values from mass spectrometry (MS) files in <code>mzML</code> and <code>mzXML</code> format. The tool extracts data within specified windows of retention time and m/z-values using a pre-defined list of peaks that can be changed from project to project. Therefore, the tool allows to reproduciblibly extract data from large numbers of MS files.</p>
+<p>The app's frontend is build using <a href="https://plot.ly/dash/">Plotly-Dash</a> and runs locally in a browser. Thought, the Python functions provided can be imported and used in any python project.</p>
 <h2 id="installation">Installation</h2>
-<p>Here we use <code>conda</code> from the <a href="https://conda.io/en/latest/miniconda.html">miniconda</a> 
-(or alternatively <code>anaconda</code>) package to install dependencies in a virtual environment.</p>
+<p>Here we use <code>conda</code> from the <a href="https://conda.io/en/latest/miniconda.html">miniconda</a> (or alternatively <code>anaconda</code>) package to install dependencies in a virtual environment.</p>
 <pre><code>git clone https://github.com/soerendip/ms-mint
 cd ms-mint
 
@@ -81,7 +81,7 @@ Mint.py  # Under Linux
 python scripts/Mint.py  # Under Windows
 </code></pre>
 <p>Then navigate to the following ULR with your browser:</p>
-<pre><code>http://localhost:9999/apps/Mint.ipynb?appmode_scroll=0
+<pre><code>http://localhost:9999/
 </code></pre>
 <h1 id="a-typical-workflow">A typical workflow</h1>
 <p><img alt="Demo Image" src="image/mint1.png" title="Demo image" />
@@ -170,5 +170,5 @@ python scripts/Mint.py  # Under Windows
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-21 19:17:52
+Build Date UTC : 2019-11-21 19:23:37
 -->
