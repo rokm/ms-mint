@@ -82,9 +82,10 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#the-gui">The GUI</a></li>
-            <li><a href="#select-files">Select Files</a></li>
-            <li><a href="#run-mint-and-export-data">Run Mint and export data</a></li>
-            <li><a href="#the-interactive-table">The interactive table</a></li>
+            <li><a href="#select-ms-files-mzxml-or-mzml">Select MS Files (mzXML or mzML)</a></li>
+            <li><a href="#select-peaklist">Select Peaklist</a></li>
+            <li><a href="#run-mint">Run MINT</a></li>
+            <li><a href="#interactive-table">Interactive Table</a></li>
             <li><a href="#heatmap-tool">Heatmap Tool</a></li>
             <li><a href="#peak-view">Peak View</a></li>
             <li><a href="#3d-peak-view">3D-Peak View</a></li>
@@ -94,12 +95,13 @@
 
 <h1 id="the-gui">The GUI</h1>
 <p>The app's frontend is build using <a href="https://plot.ly/dash/">Plotly-Dash</a> and runs locally in a browser. Thought, the Python functions provided can be imported and used in any Python project independently.</p>
-<h2 id="select-files">Select Files</h2>
+<h2 id="select-ms-files-mzxml-or-mzml">Select MS Files (mzXML or mzML)</h2>
 <p>Individual files can be added to an in worklist using the <code>ADD FILE(S)</code> button. If the checkbox <code>Add files from directory</code> is checked, all files from a directory and its subdirectories are imported that end on <code>mzXML</code> or <code>mzML</code> (not yet supported). The box is checked by default. Note that files are always added to the worklist. The worklist can be cleared with the <code>CLEAR FILES</code> button, which has no effect on the selected peaklists.</p>
+<h2 id="select-peaklist">Select Peaklist</h2>
 <p>A standard peaklist is provided. A user defined peaklist can be selected and used with the <code>SELECT PEAKLIST FILE(S)</code> button. Peaklists are explained in more detail <a href="../peaklists/">here</a>.</p>
 <p><img alt="Demo Image" src="../image/mint1.png" title="Demo image" /></p>
-<h2 id="run-mint-and-export-data">Run Mint and export data</h2>
-<h2 id="the-interactive-table">The interactive table</h2>
+<h2 id="run-mint">Run MINT</h2>
+<h2 id="interactive-table">Interactive Table</h2>
 <h2 id="heatmap-tool">Heatmap Tool</h2>
 <p><img alt="Demo Image" src="../image/mint2.png" title="Demo image" /></p>
 <h2 id="peak-view">Peak View</h2>
