@@ -58,6 +58,9 @@
         <li class="main "><a href="#the-gui">The GUI</a></li>
         <li class="main "><a href="#peaklists">Peaklists</a></li>
             <li><a href="#peaklabel">peakLabel</a></li>
+            <li><a href="#peakmz">peakMz</a></li>
+            <li><a href="#peakmzwidthppm">peakMzWidth[ppm]</a></li>
+            <li><a href="#rtmin-and-rtmax">rtmin and rtmax</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -93,16 +96,22 @@ python scripts/Mint.py  # Under Windows
 <img alt="Demo Image" src="image/mint3.png" title="Demo image" />
 <img alt="Demo Image" src="image/mint4.png" title="Demo image" /></p>
 <h1 id="peaklists">Peaklists</h1>
-<p>A peaklists contains the definitions of peaks that are extracted. A peak is defined by five properties:</p>
+<p>A peaklist is provided as <code>csv</code> file and contains the definitions of peaks to be extracted. A peak is defined by five properties that need to be present as headers in the <code>csv</code> file:</p>
 <ul>
 <li><strong>peakLabel</strong></li>
-<li><strong>peakMz</strong>: The target mass (m/z-value)</li>
-<li><strong>peakMzWidth[ppm]</strong>: The width of the peak in the m/z-dimension in units of ppm (peakMz/1e6)</li>
-<li><strong>rtmin</strong>: The start retention time for each peak.</li>
-<li><strong>rtmax</strong>: The final retention time for each peak.</li>
+<li><strong>peakMz</strong></li>
+<li><strong>peakMzWidth[ppm]</strong></li>
+<li><strong>rtmin</strong></li>
+<li><strong>rtmax</strong></li>
 </ul>
-<h3 id="peaklabel">peakLabel</h3>
-<p>A unique identifier such as the biomarker name or ID</p></div>
+<h4 id="peaklabel">peakLabel</h4>
+<p>A unique identifier such as the biomarker name or ID</p>
+<h4 id="peakmz">peakMz</h4>
+<p>The target mass (m/z-value)</p>
+<h4 id="peakmzwidthppm">peakMzWidth[ppm]</h4>
+<p>The width of the peak in the m/z-dimension in units of ppm (peakMz/1e6)</p>
+<h4 id="rtmin-and-rtmax">rtmin and rtmax</h4>
+<p>The start and end of the retention time for each peak in seconds.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -185,5 +194,5 @@ python scripts/Mint.py  # Under Windows
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-21 19:40:15
+Build Date UTC : 2019-11-21 19:43:23
 -->
