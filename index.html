@@ -91,16 +91,15 @@
 
 <h1 id="welcome-to-mint-metabolomics-integrator">Welcome to MINT (Metabolomics Integrator)</h1>
 <p>MINT is an app for summing up intensity values from consistent mass spectrometry (MS) files in <code>mzML</code> and <code>mzXML</code> format. The tool extracts data within specified windows of retention time and m/z-values using a pre-defined list of peaks that can be changed from project to project. Therefore, the tool allows to reproduciblibly extract data from large numbers of MS files.</p>
-<p>The app's frontend is build using <a href="https://plot.ly/dash/">Plotly-Dash</a> and runs locally in a browser. Thought, the Python functions provided can be imported and used in any Python project independently.</p>
 <h2 id="installation">Installation</h2>
 <p>Here we use <code>conda</code> from the <a href="https://conda.io/en/latest/miniconda.html">miniconda</a> (or alternatively <code>anaconda</code>) package to install dependencies in a virtual environment.</p>
 <pre><code>git clone https://github.com/soerendip/ms-mint
 cd ms-mint
 
-conda create -n ms-mint -c plotly lxml matplotlib pandas pandoc pip plotly plotly_express dash dash-bootstrap-components pyqt python=3 scipy setuptools sqlite statsmodels flask
+conda create -n ms-mint -c plotly lxml matplotlib pandas pandoc pip plotly plotly_express dash pyqt python=3 scipy setuptools sqlite statsmodels flask
 
 conda activate ms-mint
-pip install pyteomics openpyxl colorlover
+pip install pyteomics openpyxl colorlover dash-bootstrap-components
 python setup.py install  # Don't use pip to install it.
 </code></pre>
 <h2 id="start-the-application">Start the application</h2>
@@ -194,5 +193,5 @@ python scripts/Mint.py  # Under Windows
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-21 20:41:14
+Build Date UTC : 2019-12-02 09:06:19
 -->
