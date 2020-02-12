@@ -92,7 +92,7 @@
 <ul>
 <li><strong>peak_label</strong> : A <strong>unique</strong> identifier such as the biomarker name or ID. Even if multiple peaklist files are used, the label have to be unique across all the files.</li>
 <li><strong>mz_mean</strong> : The target mass (m/z-value) in [Da].</li>
-<li><strong>mz_width</strong> : The width of the peak in the m/z-dimension in units of ppm. The window will be <em>mz_mean</em> +/- (<em>mz_width</em>mz_mean<em>1e-6</em>). Usually, a values between 5 and 10 are used.</li>
+<li><strong>mz_width</strong> : The width of the peak in the m/z-dimension in units of ppm. The window will be <em>mz_mean</em> +/- (mz_width * mz_mean * 1e-6). Usually, a values between 5 and 10 are used.</li>
 <li><strong>rt_min</strong> : The start of the retention time for each peak in [min].</li>
 <li><strong>rt_max</strong> : The end of the retention time for each peak in [min].</li>
 <li><strong>intensity_threshold</strong> : A threshold that is applied to filter noise for each window individually. Can be set to 0 or any positive value.</li>
