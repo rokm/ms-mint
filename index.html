@@ -81,7 +81,7 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#welcome-to-mint-metabolomics-integrator">Welcome to MINT (Metabolomics Integrator)</a></li>
+        <li class="main active"><a href="#welcome">Welcome</a></li>
             <li><a href="#installation">Installation</a></li>
             <li><a href="#start-the-application">Start the application</a></li>
             <li><a href="#the-gui">The GUI</a></li>
@@ -89,24 +89,40 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-mint-metabolomics-integrator">Welcome to MINT (Metabolomics Integrator)</h1>
-<p>MINT is an app for summing up intensity values from consistent mass spectrometry (MS) files in <code>mzML</code> and <code>mzXML</code> format. The tool extracts data within specified windows of retention time and m/z-values using a pre-defined list of peaks that can be changed from project to project. Therefore, the tool allows to reproduciblibly extract data from large numbers of MS files.</p>
+<h1 id="welcome">Welcome</h1>
+<p>MINT (Metabolomics Integrator) is an app for processing mzML and mzXML mass-spectrometry (MS) files in MS1 mode. Its main function is to sum up intensity values from usually pre-defined windows in m/z and scan-time (also called retention time) space. These windows can be provided in a <code>csv-file</code> or set programmatically. Therefore, a large number of MS-files can be processed in very standardized and reproducible manner.</p>
+<p>The tool can be used with a browser based graphical user interface (GUI) implemented as interactive dashboard with <a href="https://plot.ly/dash/">Plotly-Dash</a>. A second (experimental) GUI is available that runs integrated in a <code>Jupyter Notebook</code>. Alternatively, the <code>ms_mint</code> package can be imported as python library to be integrated in any Python script and processing pipeline to automate MS-file processing.</p>
 <h2 id="installation">Installation</h2>
+<h3 id="with-anaconda-miniconda">With Anaconda (Miniconda)</h3>
+<p>conda create -n ms-mint python=3.8
+   conda activate ms-mint
+   pip install ms-mint</p>
+<p>The server to run the GUI can be started with </p>
+<pre><code>Mint.py
+</code></pre>
+<p>Then navigate to http://localhost:9999.</p>
+<h3 id="with-pip">With PIP</h3>
+<p>The program can be installed in a Python 3 (&gt;= 3.7) environment using <code>pip</code>:</p>
+<pre><code>pip install ms-mint
+</code></pre>
+<p>The server to run the GUI can be started with </p>
+<pre><code>Mint.py
+</code></pre>
+<p>Then navigate to http://localhost:9999.</p>
+<h3 id="from-source">From source</h3>
 <p>Here we use <code>conda</code> from the <a href="https://conda.io/en/latest/miniconda.html">miniconda</a> (or alternatively <code>anaconda</code>) package to install dependencies in a virtual environment.</p>
 <pre><code>git clone https://github.com/soerendip/ms-mint
 cd ms-mint
 
-conda create -n ms-mint -c plotly lxml matplotlib pandas pandoc pip plotly plotly_express dash pyqt python=3 scipy setuptools sqlite statsmodels flask
-
+conda create -n ms-mint python=3.8
 conda activate ms-mint
-pip install pyteomics openpyxl colorlover dash-bootstrap-components
-python setup.py install  # Don't use pip to install it.
+pip setup.py install  # for regular install
+pip install -e .  # for development
 </code></pre>
 <h2 id="start-the-application">Start the application</h2>
 <p>Start the app with</p>
-<pre><code>conda activate ms-mint
-Mint.py  # Under Linux
-python scripts/Mint.py  # Under Windows
+<pre><code>conda activate ms-mint  # if you run MINT in an Anaconda environment
+Mint.py
 </code></pre>
 <p>Then navigate to the following ULR with your browser: <code>http://localhost:9999/</code></p>
 <h2 id="the-gui">The GUI</h2>
@@ -193,5 +209,5 @@ python scripts/Mint.py  # Under Windows
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-12-02 09:06:19
+Build Date UTC : 2020-02-12 22:58:35
 -->
