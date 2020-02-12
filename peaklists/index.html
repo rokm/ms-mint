@@ -82,7 +82,6 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#peaklists">Peaklists</a></li>
-            <li><a href="#peak_label">peak_label</a></li>
             <li><a href="#mz_mean">mz_mean</a></li>
             <li><a href="#mz_width">mz_width</a></li>
             <li><a href="#rt_min">rt_min</a></li>
@@ -95,8 +94,8 @@
 
 <h1 id="peaklists">Peaklists</h1>
 <p>A peaklist is the protocol that captures how data is going to be extracted from the individual MS-files. It is provided as <code>csv</code> file and essentially contains the definitions of peaks to be extracted. A single peak is defined by five properties that need to be present as headers in the <code>csv</code> file which will be explained in the following:</p>
-<h4 id="peak_label">peak_label</h4>
-<p>A <strong>unique</strong> identifier such as the biomarker name or ID. Even if multiple peaklist files are used, the label have to be unique across all the files.</p>
+<pre><code>- **peak_label**:  A __unique__ identifier such as the biomarker name or ID. Even if multiple peaklist files are used, the label have to be unique across all the files.
+</code></pre>
 <h4 id="mz_mean">mz_mean</h4>
 <p>The target mass (m/z-value) in [Da].</p>
 <h4 id="mz_width">mz_width</h4>
