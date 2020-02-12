@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Soren Wacker">
-        <link rel="canonical" href="https://github.com/soerendip/ms-mint/gui/">
+        <link rel="canonical" href="https://github.com/soerendip/ms-mint/python/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>The GUI - MINT (Metabolomics Integrator)</title>
+        <title>Python - MINT (Metabolomics Integrator)</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -49,8 +49,8 @@
                             <li >
                                 <a href="..">Home</a>
                             </li>
-                            <li class="active">
-                                <a href="./">The GUI</a>
+                            <li >
+                                <a href="../gui/">The GUI</a>
                             </li>
                             <li >
                                 <a href="../peaklists.md">Peaklists</a>
@@ -63,16 +63,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="..">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="disabled">
-                                <a rel="prev" >
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -81,35 +71,11 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#the-browser-based-gui">The browser based GUI</a></li>
-            <li><a href="#select-ms-files-mzxml-or-mzml">Select MS Files (mzXML or mzML)</a></li>
-            <li><a href="#select-peaklist">Select Peaklist</a></li>
-            <li><a href="#run-mint">Run MINT</a></li>
-            <li><a href="#interactive-table">Interactive Table</a></li>
-            <li><a href="#heatmap-tool">Heatmap Tool</a></li>
-            <li><a href="#peak-view">Peak View</a></li>
-            <li><a href="#3d-peak-view">3D-Peak View</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="the-browser-based-gui">The browser based GUI</h1>
-<p>The app's frontend is build using <a href="https://plot.ly/dash/">Plotly-Dash</a> and runs locally in a browser. Thought, the Python functions provided can be imported and used in any Python project independently.</p>
-<h2 id="select-ms-files-mzxml-or-mzml">Select MS Files (mzXML or mzML)</h2>
-<p>Individual files can be added to an in worklist using the <code>ADD FILE(S)</code> button. If the checkbox <code>Add files from directory</code> is checked, all files from a directory and its subdirectories are imported that end on <code>mzXML</code> or <code>mzML</code> (not yet supported). The box is checked by default. Note that files are always added to the worklist. The worklist can be cleared with the <code>CLEAR FILES</code> button, which has no effect on the selected peaklists.</p>
-<h2 id="select-peaklist">Select Peaklist</h2>
-<p>A standard peaklist is provided. A user defined peaklist can be selected and used with the <code>SELECT PEAKLIST FILE(S)</code> button. Peaklists are explained in more detail <a href="..#peaklists">here</a>.</p>
-<p><img alt="Demo Image" src="../image/mint1.png" title="Demo image" /></p>
-<h2 id="run-mint">Run MINT</h2>
-<p>The number of cores used for MINT can be selected with the <code>Select number of cores</code> slider. The maximum number shown here depends on the computer on which MINT is running. The <code>RUN</code> button starts mint and a progress bar monitors the progress and can be used to estimate the remaining time.</p>
-<h2 id="interactive-table">Interactive Table</h2>
-<p>The results</p>
-<h2 id="heatmap-tool">Heatmap Tool</h2>
-<p><img alt="Demo Image" src="../image/mint2.png" title="Demo image" /></p>
-<h2 id="peak-view">Peak View</h2>
-<p><img alt="Demo Image" src="../image/mint3.png" title="Demo image" /></p>
-<h2 id="3d-peak-view">3D-Peak View</h2>
-<p><img alt="Demo Image" src="../image/mint4.png" title="Demo image" /></p></div>
+</div>
         </div>
 
         <footer class="col-md-12">
