@@ -82,11 +82,12 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#peaklists">Peaklists</a></li>
-            <li><a href="#peaklabel">peakLabel</a></li>
-            <li><a href="#peakmz">peakMz</a></li>
-            <li><a href="#peakmzwidthppm">peakMzWidth[ppm]</a></li>
-            <li><a href="#rtmin">rtmin</a></li>
-            <li><a href="#rtmax">rtmax</a></li>
+            <li><a href="#peak_label">peak_label</a></li>
+            <li><a href="#mz_mean">mz_mean</a></li>
+            <li><a href="#mz_width">mz_width</a></li>
+            <li><a href="#rt_min">rt_min</a></li>
+            <li><a href="#rt_max">rt_max</a></li>
+            <li><a href="#intensity_threshold">intensity_threshold</a></li>
             <li><a href="#example-peaklist">Example Peaklist</a></li>
     </ul>
 </div></div>
@@ -94,21 +95,23 @@
 
 <h1 id="peaklists">Peaklists</h1>
 <p>A peaklist is the protocol that captures how data is going to be extracted from the individual MS-files. It is provided as <code>csv</code> file and essentially contains the definitions of peaks to be extracted. A single peak is defined by five properties that need to be present as headers in the <code>csv</code> file.</p>
-<h4 id="peaklabel">peakLabel</h4>
-<p>A unique identifier such as the biomarker name or ID</p>
-<h4 id="peakmz">peakMz</h4>
-<p>The target mass (m/z-value)</p>
-<h4 id="peakmzwidthppm">peakMzWidth[ppm]</h4>
-<p>The width of the peak in the m/z-dimension in units of ppm (peakMz/1e6)</p>
-<h4 id="rtmin">rtmin</h4>
-<p>The start of the retention time for each peak in seconds.</p>
-<h4 id="rtmax">rtmax</h4>
-<p>The end of the retention time for each peak in seconds.</p>
+<h4 id="peak_label">peak_label</h4>
+<p>A <strong>unique</strong> identifier such as the biomarker name or ID. Even if multiple peaklist files are used, the label have to be unique across all the files.</p>
+<h4 id="mz_mean">mz_mean</h4>
+<p>The target mass (m/z-value) in [Da].</p>
+<h4 id="mz_width">mz_width</h4>
+<p>The width of the peak in the m/z-dimension in units of ppm (peakMz/1e6). The window will be <em>mz_mean</em> +/- (<em>mz_width</em>mz_mean<em>1e-6</em>).</p>
+<h4 id="rt_min">rt_min</h4>
+<p>The start of the retention time for each peak in minutes.</p>
+<h4 id="rt_max">rt_max</h4>
+<p>The end of the retention time for each peak in minutes.</p>
+<h4 id="intensity_threshold">intensity_threshold</h4>
+<p>A threshold that is applied to filter noise for each window individually. Can be set to 0 or any positive value.</p>
 <h2 id="example-peaklist">Example Peaklist</h2>
 <p><code>peaklist.csv</code></p>
-<pre><code class="text">peakLabel,peakMz,peakMzWidth[ppm],rtmin,rtmax
-Arabitol,151.0605,10,4.65,5.2
-Xanthine,151.02585,10,4.18,4.53
+<pre><code class="text">peak_label,mz_mean,mz_width,rt_min,rt_max,intensity_threshold
+Biomarker-1,151.0605,10,4.65,5.2,0
+Biomarker-2,151.02585,10,4.18,4.53,0
 </code></pre></div>
         </div>
 
