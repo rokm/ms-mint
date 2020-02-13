@@ -83,9 +83,8 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#welcome">Welcome</a></li>
             <li><a href="#installation">Installation</a></li>
-            <li><a href="#starting-the-browser-based-gui">Starting the browser based GUI</a></li>
         <li class="main "><a href="#peaklists">Peaklists</a></li>
-            <li><a href="#example-peaklist-file">Example peaklist-file</a></li>
+            <li><a href="#example-file">Example file</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -113,13 +112,12 @@ conda activate ms-mint
 pip setup.py install  # for regular install
 pip install -e .  # for development
 </code></pre>
-<h2 id="starting-the-browser-based-gui">Starting the browser based GUI</h2>
-<p>Start the app with</p>
+<h3 id="starting-the-browser-based-gui">Starting the browser based GUI</h3>
+<p>The browser based GUI can then be started with</p>
 <pre><code>conda activate ms-mint  # if you run MINT in an Anaconda environment
 Mint.py
 </code></pre>
-<p>Then navigate to the following ULR with your browser: <a href="http://localhost:9999/">http://localhost:9999/</a></p>
-<p>The graphical user interface is explained in more detail <a href="gui/">here</a></p>
+<p>Then navigate to the following ULR with your browser: <a href="http://localhost:9999/">http://localhost:9999/</a>. The graphical user interface is explained in more detail <a href="gui/">here</a></p>
 <h1 id="peaklists">Peaklists</h1>
 <p>A peaklist is the protocol that captures how data is going to be extracted from the individual MS-files. It is provided as <code>csv-file</code> and essentially contains the definitions of peaks to be extracted. A single peak is defined by five properties that need to be present as headers in the <code>csv-file</code> which will be explained in the following:</p>
 <ul>
@@ -130,7 +128,7 @@ Mint.py
 <li><strong>rt_max</strong> : The end of the retention time for each peak in [min].</li>
 <li><strong>intensity_threshold</strong> : A threshold that is applied to filter noise for each window individually. Can be set to 0 or any positive value.</li>
 </ul>
-<h2 id="example-peaklist-file">Example peaklist-file</h2>
+<h2 id="example-file">Example file</h2>
 <p><strong>peaklist.csv:</strong></p>
 <pre><code class="text">peak_label,mz_mean,mz_width,rt_min,rt_max,intensity_threshold
 Biomarker-A,151.0605,10,4.65,5.2,0
@@ -218,5 +216,5 @@ Biomarker-B,151.02585,10,4.18,4.53,0
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2020-02-12 23:39:56
+Build Date UTC : 2020-02-13 01:32:19
 -->
