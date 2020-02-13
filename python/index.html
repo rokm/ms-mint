@@ -50,7 +50,7 @@
                                 <a href="..">Home</a>
                             </li>
                             <li >
-                                <a href="../gui/">Mint-GUI</a>
+                                <a href="../gui/">Mint GUI</a>
                             </li>
                             <li class="active">
                                 <a href="./">Python API</a>
@@ -84,13 +84,17 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#python-integration">Python Integration</a></li>
-        <li class="main "><a href="#the-jupyter-gui">The Jupyter GUI</a></li>
+        <li class="main active"><a href="#python-api">Python API</a></li>
+            <li><a href="#load-files">Load files</a></li>
+            <li><a href="#running-mint">Running Mint</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#peak-shapes">Peak-shapes</a></li>
+            <li><a href="#export-results">Export results</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="python-integration">Python Integration</h1>
+<h1 id="python-api">Python API</h1>
 <p><code>ms-mint</code> backend can be imported as a python object and used in a python script or interactively in a Jupyter notebook environment. A typical workflow using the python API is described in the following:</p>
 <pre><code>from ms_mint import Mint
 from glob import glob
@@ -98,6 +102,7 @@ from glob import glob
 <p>Fist, the Mint class has to be instantiated:</p>
 <pre><code>mint = Mint(verbose=False)
 </code></pre>
+<h3 id="load-files">Load files</h3>
 <p>One ore more peaklist files as well as mass-spec files have to be assigned to <code>mint.peaklist_files</code> and <code>mint.files</code> accordingly:</p>
 <pre><code>mint.peaklist_files = ['path_to/peaklist-file.csv']
 mint.files = glob('path_to/ms-files/*/**.mzML', recursive=True)
@@ -113,6 +118,7 @@ mint.files = glob('path_to/ms-files/*/**.mzML', recursive=True)
 3          4  273.00061         5    1.10    2.22                    0  ./data/peaklist_v0.csv
 </pre>
 
+<h3 id="running-mint">Running Mint</h3>
 <p>Then mint can be executed calling the <code>run()</code> method:</p>
 <pre><code>mint.run()
 
@@ -121,6 +127,7 @@ mint.files = glob('path_to/ms-files/*/**.mzML', recursive=True)
 &gt; Runtime per file: 3.09s
 &gt; Runtime per peak (79): 0.04s
 </code></pre>
+<h3 id="results">Results</h3>
 <p>The result will be stored in the <code>results</code> and the <code>crosstab</code> attributes as <code>pandas.DataFrames()</code>. Where <code>mint.results</code> contains all results:</p>
 <pre><code>print(mint.results)
 </code></pre>
@@ -141,6 +148,7 @@ peak_label    mz_mean  mz_width  rt_min  rt_max  intensity_threshold  peaklist  
 ...
 </pre>
 
+<h3 id="peak-shapes">Peak-shapes</h3>
 <p>The last property is <code>mint.rt_projections</code> which stores a dictionary of dictionaries with peak shapes:</p>
 <pre>
 {'1': {'./data/test.mzXML': retentionTime
@@ -169,11 +177,15 @@ peak_label    mz_mean  mz_width  rt_min  rt_max  intensity_threshold  peaklist  
   ...
 </pre>
 
+<h4 id="plotting-shapes">Plotting shapes</h4>
 <p>The peak shapes can be plotted with the same function that is used by the GUI's:</p>
 <pre><code>from ms_mint.plotly_tools import plot_rt_projections
 plot_rt_projections(mint)
 </code></pre>
-<h1 id="the-jupyter-gui">The Jupyter GUI</h1></div>
+<h3 id="export-results">Export results</h3>
+<p>Mint results can be exported using the <code>export()</code> method. A filename has to be provided:</p>
+<pre><code>mint.export('MINT-results.xlsx')
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
