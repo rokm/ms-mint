@@ -85,33 +85,41 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#the-browser-based-gui">The browser based GUI</a></li>
-            <li><a href="#select-ms-files-mzxml-or-mzml">Select MS Files (mzXML or mzML)</a></li>
-            <li><a href="#select-peaklist">Select Peaklist</a></li>
-            <li><a href="#run-mint">Run MINT</a></li>
-            <li><a href="#interactive-table">Interactive Table</a></li>
+            <li><a href="#load-files">Load files</a></li>
+            <li><a href="#running-mint">Running Mint</a></li>
+            <li><a href="#export">Export</a></li>
+        <li class="main "><a href="#interactive-elements">Interactive elements</a></li>
+            <li><a href="#interative-results-table">Interative Results Table</a></li>
             <li><a href="#heatmap-tool">Heatmap Tool</a></li>
-            <li><a href="#peak-view">Peak View</a></li>
-            <li><a href="#3d-peak-view">3D-Peak View</a></li>
+            <li><a href="#peak-viewer">Peak-Viewer</a></li>
+            <li><a href="#3d-peak-viewer">3D-Peak-Viewer</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="the-browser-based-gui">The browser based GUI</h1>
 <p>The app's frontend is build using <a href="https://plot.ly/dash/">Plotly-Dash</a> and runs locally in a browser. Thought, the Python functions provided can be imported and used in any Python project independently.</p>
-<h2 id="select-ms-files-mzxml-or-mzml">Select MS Files (mzXML or mzML)</h2>
+<h3 id="load-files">Load files</h3>
+<h4 id="mass-spec-files-mzml-or-mzxml">Mass spec files (mzML or mzXML)</h4>
 <p>Individual files can be added to an in worklist using the <code>ADD FILE(S)</code> button. If the checkbox <code>Add files from directory</code> is checked, all files from a directory and its subdirectories are imported that end on <code>mzXML</code> or <code>mzML</code> (not yet supported). The box is checked by default. Note that files are always added to the worklist. The worklist can be cleared with the <code>CLEAR FILES</code> button, which has no effect on the selected peaklists.</p>
-<h2 id="select-peaklist">Select Peaklist</h2>
+<h4 id="select-peaklist-file">Select Peaklist file</h4>
 <p>A standard peaklist is provided. A user defined peaklist can be selected and used with the <code>SELECT PEAKLIST FILE(S)</code> button. Peaklists are explained in more detail <a href="..#peaklists">here</a>.</p>
 <p><img alt="Demo Image" src="../image/mint1.png" title="Demo image" /></p>
-<h2 id="run-mint">Run MINT</h2>
+<h3 id="running-mint">Running Mint</h3>
 <p>The number of cores used for MINT can be selected with the <code>Select number of cores</code> slider. The maximum number shown here depends on the computer on which MINT is running. The <code>RUN</code> button starts mint and a progress bar monitors the progress and can be used to estimate the remaining time.</p>
-<h2 id="interactive-table">Interactive Table</h2>
+<h3 id="export">Export</h3>
+<p>Mint results can be exported using the <code>export()</code> method. A filename has to be provided:</p>
+<pre><code>mint.export('MINT-results.xlsx')
+</code></pre>
+<p>An Excel file with the results is exported. The file includes the data of all windows that were used as well as some metadata such as date and the current verion of <code>Mint</code>.</p>
+<h1 id="interactive-elements">Interactive elements</h1>
+<h2 id="interative-results-table">Interative Results Table</h2>
 <p>The results</p>
 <h2 id="heatmap-tool">Heatmap Tool</h2>
 <p><img alt="Demo Image" src="../image/mint2.png" title="Demo image" /></p>
-<h2 id="peak-view">Peak View</h2>
+<h2 id="peak-viewer">Peak-Viewer</h2>
 <p><img alt="Demo Image" src="../image/mint3.png" title="Demo image" /></p>
-<h2 id="3d-peak-view">3D-Peak View</h2>
+<h2 id="3d-peak-viewer">3D-Peak-Viewer</h2>
 <p><img alt="Demo Image" src="../image/mint4.png" title="Demo image" /></p></div>
         </div>
 
