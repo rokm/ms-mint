@@ -90,7 +90,14 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="jupyter-notebook-integration-experimental">Jupyter Notebook Integration (Experimental)</h1>
-<p>...</p></div>
+<pre><code>from ms_mint import Mint
+from ms_mint.JupyterGUI import JupyterGUI
+
+mint = Mint(verbose=False)
+gui = JupyterGUI(mint)
+gui.show()
+</code></pre>
+<p><img alt="Mint Jupyter GUI" src="../image/jupyter.png" title="Mint Jupyter GUI" /></p></div>
         </div>
 
         <footer class="col-md-12">
