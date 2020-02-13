@@ -88,8 +88,7 @@
             <li><a href="#load-files">Load files</a></li>
             <li><a href="#running-mint">Running Mint</a></li>
             <li><a href="#results">Results</a></li>
-            <li><a href="#peak-shapes">Peak-shapes</a></li>
-            <li><a href="#export-results">Export results</a></li>
+            <li><a href="#export">Export</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -148,7 +147,7 @@ peak_label    mz_mean  mz_width  rt_min  rt_max  intensity_threshold  peaklist  
 ...
 </pre>
 
-<h3 id="peak-shapes">Peak-shapes</h3>
+<h4 id="peak-shapes">Peak shapes</h4>
 <p>The last property is <code>mint.rt_projections</code> which stores a dictionary of dictionaries with peak shapes:</p>
 <pre>
 {'1': {'./data/test.mzXML': retentionTime
@@ -182,10 +181,11 @@ peak_label    mz_mean  mz_width  rt_min  rt_max  intensity_threshold  peaklist  
 <pre><code>from ms_mint.plotly_tools import plot_rt_projections
 plot_rt_projections(mint)
 </code></pre>
-<h3 id="export-results">Export results</h3>
+<h3 id="export">Export</h3>
 <p>Mint results can be exported using the <code>export()</code> method. A filename has to be provided:</p>
 <pre><code>mint.export('MINT-results.xlsx')
-</code></pre></div>
+</code></pre>
+<p>An Excel file with the results is exported including the peaklist and some metadata such as date and the current verion of <code>Mint</code>.</p></div>
         </div>
 
         <footer class="col-md-12">
