@@ -90,20 +90,18 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#mint-installation">MINT Installation</a></li>
+        <li class="main active"><a href="#installation">Installation</a></li>
             <li><a href="#download-latest-release-windows-10">Download Latest release (Windows 10)</a></li>
-            <li><a href="#installation">Installation</a></li>
-            <li><a href="#from-source-in-anaconda-environment-recommended-for-windows">From source in Anaconda environment (recommended for Windows)</a></li>
-        <li class="main "><a href="#starting-the-browser-based-gui">Starting the browser based GUI</a></li>
+            <li><a href="#installation_1">Installation</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="mint-installation">MINT Installation</h1>
-<h2 id="download-latest-release-windows-10">Download Latest release (Windows 10)</h2>
+<h1 id="installation">Installation</h1>
+<h3 id="download-latest-release-windows-10">Download Latest release (Windows 10)</h3>
 <p>For Windows 10 a build is provided <a href="https://github.com/soerendip/ms-mint/releases/download/v0.0.30/Mint-0.0.30-Windows10.zip">here</a></p>
 <p>Simply, unpack the zip-archive and start <code>Mint.exe</code>. Then navigate to http://localhost:9999 if the browser does not open automatically.</p>
-<h2 id="installation">Installation</h2>
+<h2 id="installation_1">Installation</h2>
 <h3 id="installation-with-pip">Installation with pip</h3>
 <p>The program can be installed in a Python 3 (&gt;= 3.7) environment using <code>pip</code>:</p>
 <pre><code>pip install ms-mint
@@ -112,7 +110,7 @@
 <pre><code>Mint.py
 </code></pre>
 <p>Then navigate to http://localhost:9999 if the browser does not open automatically.</p>
-<h2 id="from-source-in-anaconda-environment-recommended-for-windows">From source in Anaconda environment (recommended for Windows)</h2>
+<h3 id="from-source-in-anaconda-environment-recommended-for-windows">From source in Anaconda environment (recommended for Windows)</h3>
 <p>Here we use <code>conda</code> from the <a href="https://conda.io/en/latest/miniconda.html">miniconda</a> (or alternatively <code>anaconda</code>) package to install dependencies in a virtual environment.</p>
 <pre><code>git clone https://github.com/soerendip/ms-mint
 cd ms-mint
@@ -122,7 +120,7 @@ conda activate ms-mint
 pip setup.py install  # for regular install
 pip install -e .  # for development
 </code></pre>
-<h1 id="starting-the-browser-based-gui">Starting the browser based GUI</h1>
+<h3 id="starting-the-gui">Starting the GUI</h3>
 <p>The browser based GUI can then be started with</p>
 <pre><code>conda activate ms-mint  # if you run MINT in an Anaconda environment
 Mint.py
