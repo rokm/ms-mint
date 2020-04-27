@@ -97,7 +97,8 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="peaklists">Peaklists</h1>
-<p>A peaklist is the protocol that captures how data is going to be extracted from the individual MS-files. It is provided as <code>csv-file</code> and essentially contains the definitions of peaks to be extracted. A single peak is defined by five properties that need to be present as headers in the <code>csv-file</code> which will be explained in the following:</p>
+<p>A peaklist contains the definitions of peaks to be extracted. It is the protocol that captures how data is going to be extracted from the MS-files. It is provided as <code>csv</code> (comma separated values) or <code>xlsx</code> (Microsoft Excel) file. Each row defines a peak-window. If a multi-sheet xlsx file can be used the peaklist should be the first sheet.</p>
+<p>A window is defined by five properties that need to be present as headers in the peaklist file:</p>
 <ul>
 <li><strong>peak_label</strong> : A <strong>unique</strong> identifier such as the biomarker name or ID. Even if multiple peaklist files are used, the label have to be unique across all the files.</li>
 <li><strong>mz_mean</strong> : The target mass (m/z-value) in [Da].</li>
