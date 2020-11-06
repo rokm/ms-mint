@@ -100,7 +100,11 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="metabolomics-integrator-mint">Metabolomics INTegrator (MINT)</h1>
-<p>MINT (Metabolomics Integrator) is an app for post-processing of files from  liquid chromatography-mass spectrometry (LCMS) experiments. MINT can read mzML and mzXML formats. 
+<p>MINT (Metabolomics Integrator) is a post-processing tool for liquid chromatography-mass spectrometry (LCMS) based metabolomics. 
+Metabolomics is the study of all biological metabolites (small chemical compounds). 
+A typical biological sample can contain thousands of metabolites with overlapping masses. If all metabolites would be analysed at the same time with the mass spectrometer, it would be impossible to identify all individual components as single mass can originate from many distinct chemical structures. To reduce the complexit at any given timestep in the dataset, compounds are sorted with a chromatographic column. 
+The tool can be used for targeted analysis where the m/z-values (mass to charge ratios) and chromatographic retention times are known or in an untargeted approach where new biomarkers can be explored. 
+MINT can read mzML and mzXML formats. 
 Its main function is to sum up intensity values from pre-defined windows in mass over charge (m/z) and retention time (RT) space. These windows can be provided in form of a <a href="peaklists/">peaklist</a> or created interactively in the <a href="gui/">GUI</a>. With this setup large numbers of LCMS-files can be processed automatically, standardized and perfectly reproducible.</p>
 <p>The tool can be used with a browser based graphical user interface (GUI) implemented as interactive dashboard with <a href="https://plot.ly/dash/">Plotly-Dash</a>. Alternatively, the <code>ms_mint</code> package can be imported as python library to be integrated in any regular Python code as part of a larger processing pipeline or interacively in the <a href="jupyter/">Jupyter Notebook</a>.</p>
 <p><img alt="MINT" src="image/mint-overview.png" /></p></div>
@@ -187,5 +191,5 @@ Its main function is to sum up intensity values from pre-defined windows in mass
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2020-11-06 22:26:42.534606+00:00
+Build Date UTC : 2020-11-06 22:45:45.319768+00:00
 -->
