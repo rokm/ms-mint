@@ -100,7 +100,7 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="peak-detection">Peak detection</h1>
-<p>Peak detection is still an experimental feature. OpenMS's algorithm for peak detection in metabolomics data files 'FeatureFindingMetabo' is used. Peak detection happens in two steps. First, each selected file is scanned for potential peaks. Then similar peaks across multiple files are merged. No peak alignment is done. The feature maps that are internally stored in OpenMS format are then transformed to MINT peaklist format. The detected features often come from contaminations and additional scoring step is recommended to filter out low quality peak definitions. The controllable parameters for the detection algorithm are the minimum OpenMS peak quality and the maximum number of peaks per file. </p>
+<p>Peak detection is still an experimental feature. OpenMS's algorithm for peak detection from metabolomics data 'FeatureFindingMetabo' is employed. Peak detection happens in two steps. First, each selected file is scanned for potential peaks. Then similar peaks across multiple files are merged. Peak alignment for retention time drift correction is omitted. The feature maps that are internally stored in OpenMS format are then transformed to MINT peaklist format. The detected features often come from contaminations and additional scoring step is recommended to filter out low quality peak definitions. The controllable parameters for the detection algorithm are the minimum OpenMS peak quality and the maximum number of peaks per file. </p>
 <p>In the Jupter Notebook feature detection can be done as demonstrated in the following:</p>
 <pre><code>%pylab inline
 
@@ -111,7 +111,9 @@ mint = Mint()
 mint.show()
 </code></pre>
 <p><img alt="" src="../image/jupyter.png" /></p>
-<pre><code>mint.detect_peaks(min_quality=1e-3, condensed=True, 
+<pre><code>mint.ms_files = [list-of-filenames]
+
+mint.detect_peaks(min_quality=1e-3, condensed=True, 
                   max_delta_mz_ppm=10, max_delta_rt=0.1)
 </code></pre></div>
             </div>
