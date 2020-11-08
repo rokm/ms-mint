@@ -12,7 +12,7 @@
      <lastmod>2020-11-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://github.com/soerendip/ms-mint/peak_detection/</loc>
+     <loc>https://github.com/soerendip/ms-mint/peak-detection/</loc>
      <lastmod>2020-11-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -25,6 +25,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://github.com/soerendip/ms-mint/jupyter/</loc>
+     <lastmod>2020-11-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://github.com/soerendip/ms-mint/developer-notes/</loc>
      <lastmod>2020-11-08</lastmod>
      <changefreq>daily</changefreq>
     </url>

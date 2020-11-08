@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Soren Wacker">
-        
-        <link rel="shortcut icon" href="/soerendip/ms-mint/img/favicon.ico">
-        <title>Metabolomics Integrator (MINT)</title>
-        <link href="/soerendip/ms-mint/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/soerendip/ms-mint/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/soerendip/ms-mint/css/base.css" rel="stylesheet">
+        <link rel="canonical" href="https://github.com/soerendip/ms-mint/peak-detection/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Peak detection - Metabolomics Integrator (MINT)</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
 
-        <script src="/soerendip/ms-mint/js/jquery-1.10.2.min.js" defer></script>
-        <script src="/soerendip/ms-mint/js/bootstrap.min.js" defer></script>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="/soerendip/ms-mint/.">Metabolomics Integrator (MINT)</a>
+                <a class="navbar-brand" href="..">Metabolomics Integrator (MINT)</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -34,28 +34,28 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="/soerendip/ms-mint/." class="nav-link">Home</a>
+                                <a href=".." class="nav-link">Home</a>
                             </li>
                             <li class="navitem">
-                                <a href="/soerendip/ms-mint/install/" class="nav-link">Installation</a>
+                                <a href="../install/" class="nav-link">Installation</a>
                             </li>
                             <li class="navitem">
-                                <a href="/soerendip/ms-mint/peaklists/" class="nav-link">Peaklists</a>
+                                <a href="../peaklists/" class="nav-link">Peaklists</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Peak detection</a>
                             </li>
                             <li class="navitem">
-                                <a href="/soerendip/ms-mint/peak-detection/" class="nav-link">Peak detection</a>
+                                <a href="../gui/" class="nav-link">GUI</a>
                             </li>
                             <li class="navitem">
-                                <a href="/soerendip/ms-mint/gui/" class="nav-link">GUI</a>
+                                <a href="../python/" class="nav-link">Python</a>
                             </li>
                             <li class="navitem">
-                                <a href="/soerendip/ms-mint/python/" class="nav-link">Python</a>
+                                <a href="../jupyter/" class="nav-link">Jupyter</a>
                             </li>
                             <li class="navitem">
-                                <a href="/soerendip/ms-mint/jupyter/" class="nav-link">Jupyter</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="/soerendip/ms-mint/developer-notes/" class="nav-link">Developer Notes</a>
+                                <a href="../developer-notes/" class="nav-link">Developer Notes</a>
                             </li>
                         </ul>
 
@@ -65,6 +65,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../peaklists/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../gui/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -72,15 +82,43 @@
 
         <div class="container">
             <div class="row">
-
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
 
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#peak-detection" class="nav-link">Peak detection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
 
+<h1 id="peak-detection">Peak detection</h1>
+<p>Peak detection is still an experimental feature. Internally, OpenMS's algorithm for peak detection from metabolomics data 'FeatureFindingMetabo' is used to detect peaks in two steps. First, each MS file is scanned for potential peaks with the OpenMS algorithm. Then similar peaks across multiple files are merged. Peak alignment for retention time drift correction is omitted. The feature maps that are internally stored in OpenMS format (featureXML) are then transformed to table format that is used by MINT. However, the detected features often come from contaminations. Additional scoring and pre-filtering is recommended to filter out low quality peak definitions which is currently investigated. The controllable parameters for the detection algorithm are the minimum OpenMS peak quality and the maximum number of peaks per file.</p>
+<p>In the Jupter Notebook feature detection can be done as demonstrated in the following:</p>
+<pre><code>%pylab inline
+
+from ms_mint.notebook import Mint
+from glob import glob
+
+mint = Mint()
+mint.show()
+</code></pre>
+<p><img alt="" src="../image/jupyter.png" /></p>
+<pre><code>mint.ms_files = [list-of-filenames]
+
+mint.detect_peaks(min_quality=1e-3, condensed=True, 
+                  max_delta_mz_ppm=10, max_delta_rt=0.1)
+</code></pre></div>
             </div>
         </div>
 
@@ -89,11 +127,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "/soerendip/ms-mint",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="/soerendip/ms-mint/js/base.js" defer></script>
-        <script src="/soerendip/ms-mint/search/main.js" defer></script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

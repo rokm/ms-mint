@@ -43,7 +43,7 @@
                                 <a href="peaklists/" class="nav-link">Peaklists</a>
                             </li>
                             <li class="navitem">
-                                <a href="peak_detection/" class="nav-link">Peak detection</a>
+                                <a href="peak-detection/" class="nav-link">Peak detection</a>
                             </li>
                             <li class="navitem">
                                 <a href="gui/" class="nav-link">GUI</a>
@@ -53,6 +53,9 @@
                             </li>
                             <li class="navitem">
                                 <a href="jupyter/" class="nav-link">Jupyter</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="developer-notes/" class="nav-link">Developer Notes</a>
                             </li>
                         </ul>
 
@@ -105,10 +108,12 @@ Metabolomics is the study of all metabolites (small chemical compounds) in a bio
 The metabolites can be used to define biomarkers used in medicine to find treatments for diseases or for the development of diagnostic tests 
 or for the identification of pathogens such as methicillin resistant <em>Staphylococcus aureus</em> (MRSA). </p>
 <p>A typical biological sample can contain thousands of metabolites with overlapping masses. If all metabolites would be analysed at the same time with the mass spectrometer, it would be impossible to separate the signal from different components as the same mass can originate from many different and distinct chemical structures. </p>
+<p><img alt="" src="image/Saureus-metabolomics-high-res.jpeg" />
+<img alt="" src="image/Saureus-metabolomics-high-res_zoom_zoom.jpeg" /></p>
 <p>To reduce the complexity of the dataset, compounds are sorted with a chromatographic column and spread out over time, therefore adding a second dimension. That way various metabolites can be analysed successively over time. As the compounds have to pass through the column which delays certain compounds more than others according to some chemical properties e.g. their hydrophilicity. </p>
 <p>After the data has been collected and stored in a vendor specific format the data has to be analysed and deconvoluted. In other words, the data to be grouped by the originating or underlying metabolites in order to measure the specific amounts. This means to bring the unstructured data into a structured format where each column stands for one particular metabolite. The structured data can then be subjected to common data anayses such as dimensionality reduction, or clustering analysis.</p>
-<p><img alt="" src="image/cluster_analysis_wide.png" /></p>
 <p>The tool can be used for targeted analysis where the m/z-values (mass to charge ratios) and chromatographic retention times are known. Alternatively, MINT can be used in an untargeted approach where new biomarkers can be explored without prior knowledge.</p>
+<p><img alt="" src="image/cluster_analysis_wide.png" /></p>
 <p>MINT currently supports the open data formats mzML and mzXML. The main function is to extract and characterise measured intensities in a given m/z and retention time (RT) window. These windows can be provided in form of a <a href="peaklists/">peaklist</a> or created interactively in the <a href="gui/">GUI</a>. With this setup large numbers of LCMS-files can be processed automatically, standardized and perfectly reproducible.</p>
 <p>The tool can be used with a browser based graphical user interface (GUI) implemented as interactive dashboard with <a href="https://plot.ly/dash/">Plotly-Dash</a>. Alternatively, the <code>ms_mint</code> package can be imported as python library to be integrated in any regular Python code as part of a larger processing pipeline or interacively in the <a href="jupyter/">Jupyter Notebook</a>.</p>
 <p><img alt="MINT" src="image/mint-overview.png" /></p></div>
@@ -195,5 +200,5 @@ or for the identification of pathogens such as methicillin resistant <em>Staphyl
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2020-11-08 20:55:32.491161+00:00
+Build Date UTC : 2020-11-08 21:44:12.504364+00:00
 -->
