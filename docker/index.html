@@ -8,7 +8,7 @@
         <meta name="author" content="Soren Wacker">
         <link rel="canonical" href="https://github.com/soerendip/ms-mint/docker/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>MINT with Docker - Metabolomics Integrator (MINT)</title>
+        <title>Docker - Metabolomics Integrator (MINT)</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -82,25 +82,12 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#mint-with-docker" class="nav-link">MINT with Docker</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="mint-with-docker">MINT with Docker</h1>
-<p>MINT is now available on DockerHub in containerized format. A container is a standard unit of software that packages up code and all its dependencies, so the application runs quickly and reliably from one computing environment to another. In contrast to a virtual machine (VM), a Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. This allows to run MINT on any computer that can run Docker.</p>
-<p>The following command can be used to pull the latest image from docker hub.</p>
-<pre><code>docker pull msmint/msmint:latest
-</code></pre>
-<p>The image can be started with:</p>
-<pre><code>docker run -p 8501:8501 -it msmint/msmint:latest
-</code></pre>
-<p>Then the tool is available in the browser at http://localhost:8501.</p></div>
+</div>
             </div>
         </div>
 
