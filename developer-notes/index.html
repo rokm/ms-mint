@@ -89,6 +89,14 @@
             
             <li class="nav-item" data-level="1"><a href="#developer-notes" class="nav-link">Developer Notes</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#windows-executables" class="nav-link">Windows executables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#documentation-deployment" class="nav-link">Documentation deployment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -100,10 +108,10 @@
 <pre><code>python3 setup.py sdist bdist_wheel
 python3 -m twine upload --repository ms-mint dist/ms*mint-*
 </code></pre>
-<h3 id="on-windows">On windows</h3>
+<h2 id="windows-executables">Windows executables</h2>
 <pre><code>pyinstaller --onedir --noconfirm specfiles\Mint__onedir__.spec --additional-hooks-dir=hooks
 </code></pre>
-<h3 id="docs">Docs</h3>
+<h2 id="documentation-deployment">Documentation deployment</h2>
 <pre><code>mkdocs build &amp;&amp; mkdocs gh-deploy
 </code></pre></div>
             </div>
