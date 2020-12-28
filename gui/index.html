@@ -109,6 +109,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#run-mint" class="nav-link">Run MINT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#quality-control" class="nav-link">Quality Control</a>
               <ul class="nav flex-column">
               </ul>
@@ -170,9 +174,29 @@ Note that <em>mzXML</em> and <em>mzML</em> files will be deleted after convertio
 <p>The metadata table can be downloaded modified e.g. with Excel and uploaded again. </p>
 <h2 id="peaklist">Peaklist</h2>
 <p><img alt="Peaklist" src="../image/mint-peaklist.png" title="Peaklist" /></p>
+<p>Peaklists are collection of peak definitions for the extraction of MS intensities beloning to individual metabolites. 
+Peaklists can be provided as Excel or CSV files. Peaklists are explained in more detail <a href="../peaklists/">here</a>.
+Files can be uploaded via the drag and drop area or the selection tool. The peaklist can be edited in place or
+with the peak optimization tools.</p>
 <h2 id="peak-optimization">Peak Optimization</h2>
+<p>Retention times (RT) depend on the experiment and the specific chromatographic column used. 
+Additionally, aging of the column leads to drifts in RT that have to be accounted for. 
+The tools in the peak optimization tab can be used to quickly review all  peak definitions in 
+the presently loaded peaklist. </p>
 <p><img alt="Peaklist" src="../image/mint-peakopt-previews.png" title="Peak preview" /></p>
+<p>The <code>GENERATE PEAK PREVIEWS</code> generates a preview of all peak definitions and plots the
+coresponding chromatograms for all files. The peaks can be reviewed and modified one by one
+with the interactive tool. <code>FIND CLOSED PEAKS</code> iterates through all peak definitions and
+identifes the closest peak with respect to the expected RT which is displayed as black vertical line.</p>
 <p><img alt="Peaklist" src="../image/mint-peakopt-manual.png" title="Peak preview" /></p>
+<p>When a peak is selected in the drop down box the chromatograms for the particular mass windows
+using the peak width as defined in the peaklist is extracted and displayed. The current rt window
+is visualized as green box. <code>SET RT TO CURRENT VIEW</code> will set the <em>rt_min</em> and <em>rt_max</em> values 
+to the current view and updated the peaklist accordingly.</p>
+<h2 id="run-mint">Run MINT</h2>
+<p>When all peaks look good the data can be processed using <code>RUN MINT</code>. This will apply
+the current peaklist to the MS-files in the workspace and extract additional properties.
+When the results tables are present the results can be explored with the following tabs. </p>
 <h2 id="quality-control">Quality Control</h2>
 <p><img alt="Quality Control" src="../image/mint-qc-0.png" title="Quality Control" /></p>
 <p><img alt="Quality Control" src="../image/mint-qc-1.png" title="Quality Control" /></p>
