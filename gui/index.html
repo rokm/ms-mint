@@ -199,10 +199,33 @@ the current peaklist to the MS-files in the workspace and extract additional pro
 When the results tables are present the results can be explored with the following tabs. 
 The generated results can be downloaded with the <code>DOWNLOAD</code> button.</p>
 <h2 id="quality-control">Quality Control</h2>
+<p>After running MINT the results can be downloaed or analysed using the provided tools.
+For quality control purposes histograms and boxplots can be generated in the 
+quality control tab. </p>
 <p><img alt="Quality Control" src="../image/mint-qc-0.png" title="Quality Control" /></p>
+<p>The MS-files can be grouped based on the values in the metadata table. If nothing
+is selected the data will not be grouped in order to plot the overall distribution.
+The second dropdown menu allows to select one or multple kinds of graphs that 
+to generate. The third dropdown menu allows to include certain file types. 
+For example, the analysis can be limited to only the biological samples if such a 
+type has been defined in the type column of the metadata table. </p>
+<p>The checkbox can be used to create a dense view. If the box is unchecked the output will be
+visually grouped into an individual section for each metabolite.</p>
 <p><img alt="Quality Control" src="../image/mint-qc-1.png" title="Quality Control" /></p>
 <h2 id="heatmap">Heatmap</h2>
+<p>The interactive heatmap tool can be used to explore the results data after <code>RUN MINT</code>
+has been exectuted. The tool allows to explore the generated data in from of heatmaps.</p>
 <p><img alt="Heatmap" src="../image/mint-heatmap.png" title="Heatmap" /></p>
+<p>The first dropdown menu allows to include certain file types e.g. biological samples rather than quality control samples.
+The second dropdown menu distinguishes the how the heatmap is generated. </p>
+<ul>
+<li>Normalized by biomarer:</li>
+<li>Cluster: Cluster rows with hierachical clustering.  </li>
+<li>Dendrogram: Plots a dendrogram instead of row labels.</li>
+<li>Transpose: Switch columns and rows.</li>
+<li>Correlation: Calculate pearson correlation between columns.</li>
+<li>Show in new tab: The figure will be generated in a new independent tab. That way multiple heatmaps can be generated at the same time.</li>
+</ul>
 <p><img alt="Heatmap" src="../image/mint-heatmap-correlation.png" title="Correlation" /></p></div>
             </div>
         </div>

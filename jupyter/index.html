@@ -87,8 +87,32 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#jupyter-integration" class="nav-link">Jupyter Integration</a>
+            <li class="nav-item" data-level="1"><a href="#jupyter-integration" class="nav-link">Jupyter integration</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#interactive-mint" class="nav-link">Interactive MINT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#select-ms-files" class="nav-link">Select MS-files</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#select-peaklist-files" class="nav-link">Select peaklist files</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#optimize-retention-times" class="nav-link">Optimize retention times</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#run-mint" class="nav-link">Run MINT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#display-results" class="nav-link">Display results</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -96,19 +120,31 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="jupyter-integration">Jupyter Integration</h1>
-<p>Mint can be integrated in an interactive <code>Jupyter Notebook</code> environment with a GUI that is based on IPython-Widgets.
-The design follows the same principles as the <a href="../gui/">browser based GUI</a></p>
-<pre><code>from ms_mint import Mint
-from ms_mint.JupyterGUI import JupyterGUI
-
+<h1 id="jupyter-integration">Jupyter integration</h1>
+<h2 id="interactive-mint">Interactive MINT</h2>
+<p>MINT can be used interactively in a <code>Jupyter Notebook</code> with a GUI that is based on IPython-Widgets or programmatically.</p>
+<pre><code>from ms_mint.notebook import Mint
 mint = Mint(verbose=False)
-gui = JupyterGUI(mint)
-gui.show()
+mint.show()
 </code></pre>
-<p><img alt="Mint Jupyter GUI" src="../image/jupyter.png" title="Mint Jupyter GUI" /></p>
-<p>That way the results will be readily available for further analysis and processing that is out of the scope of <code>MINT</code>.</p>
-<pre><code>gui.results
+<p><img alt="Mint Jupyter GUI" src="../image/jupyter-gui.png" title="Mint Jupyter GUI" /></p>
+<p>With the JupyterLab it is possible to customize the GUI to personal needs. A demo notebook is available <a href="https://github.com/soerendip/ms-mint/blob/develop/notebooks/MINT__demo.ipynb">here</a>.</p>
+<h2 id="select-ms-files">Select MS-files</h2>
+<pre><code>from glob import glob
+mint.ms_files = glob('/path/to/files/*mzML')
+</code></pre>
+<h2 id="select-peaklist-files">Select peaklist files</h2>
+<pre><code>mint.peaklist_files = '/path/to/peaklist/file/peaklist.csv'
+</code></pre>
+<h2 id="optimize-retention-times">Optimize retention times</h2>
+<pre><code>mint.optimize_retention_times()
+</code></pre>
+<h2 id="run-mint">Run MINT</h2>
+<pre><code>mint.run()
+</code></pre>
+<h2 id="display-results">Display results</h2>
+<p>That way the results will be readily available for further analysis.</p>
+<pre><code>mint.results
 </code></pre>
 <p><img alt="Mint Jupyter Results" src="../image/jupyter_results.png" title="Mint Jupyter Results" /></p></div>
             </div>
