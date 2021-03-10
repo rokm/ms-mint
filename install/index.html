@@ -93,11 +93,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#with-pypi-recommended" class="nav-link">With PyPI (recommended)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#from-source" class="nav-link">From source</a>
+            <li class="nav-item" data-level="2"><a href="#with-pypi" class="nav-link">With PyPI</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -106,6 +102,10 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#docker" class="nav-link">Docker</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#from-source" class="nav-link">From source</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -121,10 +121,36 @@
 <p>For Windows 10 a build is provided <a href="https://github.com/soerendip/ms-mint/releases/latest">here</a>. 
 Simply, unpack the zip-archive and start <code>Mint.exe</code>. 
 Then navigate to <a href="http://localhost:9999">http://localhost:9999</a> if the browser does not open automatically.</p>
-<h2 id="with-pypi-recommended">With PyPI (recommended)</h2>
+<h2 id="with-pypi">With PyPI</h2>
 <p>The program can be installed in a Python 3 (&gt;= 3.7) environment using <code>pip</code>:</p>
 <pre><code>pip install ms-mint
 </code></pre>
+<h2 id="launching-the-gui">Launching the GUI</h2>
+<p>The browser based GUI can then be started with</p>
+<pre><code>Mint.py
+</code></pre>
+<p>Then navigate to the following ULR with your browser: <a href="http://localhost:9999/">http://localhost:9999/</a>.
+More information is available in the <a href="../gui/">GUI</a> section.</p>
+<p>MINT frontend. Available optional arguments are:</p>
+<pre><code>-h, --help            show this help message and exit
+--no-browser          do not start the browser
+--version             print current version
+--data-dir DATA_DIR   target directory for MINT data
+--debug               start MINT server in debug mode
+--port PORT           change the port
+--serve-path SERVE_PATH
+                        serve app at a different path e.g. '/mint/' to serve
+                        the app at 'localhost:9999/mint/' (deprecated)
+</code></pre>
+<h2 id="docker">Docker</h2>
+<p>MINT is now available on DockerHub in containerized format. A container is a standard unit of software that packages up code and all its dependencies, so the application runs quickly and reliably from one computing environment to another. In contrast to a virtual machine (VM), a Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. This allows to run MINT on any computer that can run Docker.</p>
+<p>The following command can be used to pull the latest image from docker hub.</p>
+<pre><code>docker pull msmint/msmint:latest
+</code></pre>
+<p>The image can be started with:</p>
+<pre><code>docker run -p 9999:9999 -it msmint/msmint:latest
+</code></pre>
+<p>Then the tool is available in the browser at http://localhost:9999.</p>
 <h2 id="from-source">From source</h2>
 <p>Here we use <code>conda</code> from the <a href="https://conda.io/en/latest/miniconda.html">miniconda</a> package to install dependencies in a virtual environment.</p>
 <pre><code class="language-bash">git clone https://github.com/soerendip/ms-mint
@@ -134,23 +160,7 @@ conda create -n ms-mint python=3.8
 conda activate ms-mint
 pip setup.py install  # for regular install
 pip install -e .  # for development
-</code></pre>
-<h2 id="launching-the-gui">Launching the GUI</h2>
-<p>The browser based GUI can then be started with</p>
-<pre><code>conda activate ms-mint  # if you run MINT in an Anaconda environment
-Mint.py
-</code></pre>
-<p>Then navigate to the following ULR with your browser: <a href="http://localhost:9999/">http://localhost:9999/</a>.
-More information is available in the <a href="../gui/">GUI</a> section.</p>
-<h2 id="docker">Docker</h2>
-<p>MINT is now available on DockerHub in containerized format. A container is a standard unit of software that packages up code and all its dependencies, so the application runs quickly and reliably from one computing environment to another. In contrast to a virtual machine (VM), a Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. This allows to run MINT on any computer that can run Docker.</p>
-<p>The following command can be used to pull the latest image from docker hub.</p>
-<pre><code>docker pull msmint/msmint:latest
-</code></pre>
-<p>The image can be started with:</p>
-<pre><code>docker run -p 9999:9999 -it msmint/msmint:latest
-</code></pre>
-<p>Then the tool is available in the browser at http://localhost:9999.</p></div>
+</code></pre></div>
             </div>
         </div>
 
