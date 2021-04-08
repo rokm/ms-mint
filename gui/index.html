@@ -117,10 +117,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#quality-control" class="nav-link">Quality Control</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#analysis" class="nav-link">Analysis</a>
               <ul class="nav flex-column">
               </ul>
@@ -155,10 +151,10 @@ optional arguments:
 <li>Delete workspaces</li>
 <li>Activate workspace </li>
 </ul>
-<p><img alt="GUI" src="../image/workspaces.png" title="The workspace tab" /></p>
+<p><img alt="Workspaces" src="../image/workspaces.png" title="Workspaces" /></p>
 <p>A workspace is a container for project files that is separated from other workspaces. Through workspaces it is possible to work on different projects simultaneously. 
 All files relevant for one workspace are stored in a corresponding sub-folder of <code>--data-dir</code>, which by default is the folder MINT in the users home directory. 
-The home directory is different on different platforms. Under Windows watch out for <code>C:/Users/&lt;username&gt;/MINT</code>. 
+The home directory is different on different platforms. Under Windows the default folder is: <code>C:/Users/&lt;username&gt;/MINT</code>. 
 The path to the active workspace is always displayed above the workspace tab.</p>
 <p>To activate a particular workspace the workspace has to be selected in the table and then the <code>ACTIVATE</code> button has to be clicked. 
 <code>DELETE</code> will display a popup window upon confirmation the selected workspace with all corresponding files on the harddrive in <code>--data-dir</code> will be removed. </p>
@@ -168,7 +164,7 @@ The path to the active workspace is always displayed above the workspace tab.</p
 <li>Convert file to feather format (other formats will be removed)</li>
 <li>Remove MS-files from workspace</li>
 </ul>
-<p><img alt="Add MS-files" src="../image/ms-files.png" title="Added MS-files" /></p>
+<p><img alt="MS-files" src="../image/ms-files.png" title="MS-files" /></p>
 <p>Mass-Spec files (in <em>mzML</em> or <em>mzXML</em> format) can be added under the <code>MS-files</code> tab by drag and drop or by using the selection form. 
 Due to limitations of the Plotly-Dash framework only up to 10 files can be uploaded at a time. For larger projects, the files can simply 
 be copied manually into the ms-files subdirectory. This will be improved in future versions of MINT. </p>
@@ -184,7 +180,7 @@ Note that <em>mzXML</em> and <em>mzML</em> files will be deleted after convertio
 <li>Add types for different files e.g. biological sample, quality control sample, standards etc in order to include ore exclude certain types during analysis.</li>
 <li>Add other types of metadata. </li>
 </ul>
-<p><img alt="Add Metadata" src="../image/metadata.png" title="Add metadata" /></p>
+<p><img alt="Metadata" src="../image/metadata.png" title="Metadata" /></p>
 <p>Metadata for the individual files can be edited in the <code>Metadata</code> tab. This data can be used to group results e.g. by batch or by label as well as types.
 You want to edit metadata table to:</p>
 <h2 id="peaklist">Peaklist</h2>
@@ -203,7 +199,7 @@ with the peak optimization tools.</p>
 <li>Search for metabolites from ChEBI three stars database</li>
 <li>Add selected metabolites to peaklist (without RT estimation)</li>
 </ul>
-<p><img alt="Peaklist" src="../image/add-metabolites.png" title="Peak preview" /></p>
+<p><img alt="Add metabolites" src="../image/add-metabolites.png" title="Add metabolites" /></p>
 <h2 id="peak-optimization">Peak Optimization</h2>
 <ul>
 <li>Optimize retention times for all peaks or individual peaks</li>
@@ -213,7 +209,7 @@ with the peak optimization tools.</p>
 Additionally, aging of the column leads to drifts in RT that have to be accounted for. 
 The tools in the peak optimization tab can be used to quickly review all  peak definitions in 
 the presently loaded peaklist. </p>
-<p><img alt="Peaklist" src="../image/peak-optimization.png" title="Peak preview" /></p>
+<p><img alt="Peak optimization" src="../image/peak-optimization.png" title="Peak optimization" /></p>
 <p>The <code>GENERATE PEAK PREVIEWS</code> generates a preview of all peak definitions and plots the
 coresponding chromatograms for all files. The peaks can be reviewed and modified one by one
 with the interactive tool. <code>FIND CLOSED PEAKS</code> iterates through all peak definitions and
@@ -225,7 +221,7 @@ identifes the closest peak with respect to the expected RT which is displayed as
 <li>Remove peaks from peaklist</li>
 <li>Set expected retention time</li>
 </ul>
-<p><img alt="Peaklist" src="../image/manual-peak-optimization.png" title="Peak preview" /></p>
+<p><img alt="Manual peak optimization" src="../image/manual-peak-optimization.png" title="Manual peak optimization" /></p>
 <p>When a peak is selected in the drop down box the chromatograms for the particular mass windows
 using the peak width as defined in the peaklist is extracted and displayed. The current rt window
 is visualized as green box. <code>SET RT TO CURRENT VIEW</code> will set the <em>rt_min</em> and <em>rt_max</em> values 
@@ -241,21 +237,12 @@ to the current view and updated the peaklist accordingly.</p>
 the current peaklist to the MS-files in the workspace and extract additional properties.
 When the results tables are present the results can be explored with the following tabs. 
 The generated results can be downloaded with the <code>DOWNLOAD</code> button.</p>
-<h2 id="quality-control">Quality Control</h2>
+<h2 id="analysis">Analysis</h2>
 <p>After running MINT the results can be downloaed or analysed using the provided tools.
 For quality control purposes histograms and boxplots can be generated in the 
 quality control tab. </p>
-<p><img alt="Quality Control" src="../image/mint-qc-0.png" title="Quality Control" /></p>
-<p>The MS-files can be grouped based on the values in the metadata table. If nothing
-is selected the data will not be grouped in order to plot the overall distribution.
-The second dropdown menu allows to select one or multple kinds of graphs that 
-to generate. The third dropdown menu allows to include certain file types. 
-For example, the analysis can be limited to only the biological samples if such a 
-type has been defined in the type column of the metadata table. </p>
-<p>The checkbox can be used to create a dense view. If the box is unchecked the output will be
-visually grouped into an individual section for each metabolite.</p>
-<p><img alt="Quality Control" src="../image/mint-qc-1.png" title="Quality Control" /></p>
-<h2 id="analysis">Analysis</h2>
+<h3 id="general-selection-elements">General selection elements</h3>
+<h3 id="heatmap">Heatmap</h3>
 <p>The interactive heatmap tool can be used to explore the results data after <code>RUN MINT</code>
 has been exectuted. The tool allows to explore the generated data in from of heatmaps.</p>
 <p><img alt="Heatmap" src="../image/mint-heatmap.png" title="Heatmap" /></p>
@@ -269,7 +256,19 @@ The second dropdown menu distinguishes the how the heatmap is generated. </p>
 <li>Correlation: Calculate pearson correlation between columns.</li>
 <li>Show in new tab: The figure will be generated in a new independent tab. That way multiple heatmaps can be generated at the same time.</li>
 </ul>
-<p><img alt="Heatmap" src="../image/mint-heatmap-correlation.png" title="Correlation" /></p></div>
+<p><img alt="Heatmap" src="../image/mint-heatmap-correlation.png" title="Correlation" /></p>
+<h3 id="distributions">Distributions</h3>
+<p><img alt="Quality Control" src="../image/mint-qc-0.png" title="Quality Control" /></p>
+<p>The MS-files can be grouped based on the values in the metadata table. If nothing
+is selected the data will not be grouped in order to plot the overall distribution.
+The second dropdown menu allows to select one or multple kinds of graphs that 
+to generate. The third dropdown menu allows to include certain file types. 
+For example, the analysis can be limited to only the biological samples if such a 
+type has been defined in the type column of the metadata table. </p>
+<p>The checkbox can be used to create a dense view. If the box is unchecked the output will be
+visually grouped into an individual section for each metabolite.</p>
+<p><img alt="Quality Control" src="../image/mint-qc-1.png" title="Quality Control" /></p>
+<p>T</p></div>
             </div>
         </div>
 
