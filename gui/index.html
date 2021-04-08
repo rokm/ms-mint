@@ -8,7 +8,7 @@
         <meta name="author" content="Soren Wacker">
         <link rel="canonical" href="https://github.com/soerendip/ms-mint/gui/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>GUI - MINT Docs</title>
+        <title>GUI - MINT</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">MINT Docs</a>
+                <a class="navbar-brand" href="..">MINT</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -117,7 +117,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#heatmap" class="nav-link">Heatmap</a>
+            <li class="nav-item" data-level="2"><a href="#analysis" class="nav-link">Analysis</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -164,14 +164,15 @@ If files were added manually by copying into the ms-files subdirectory the files
 Note that <em>mzXML</em> and <em>mzML</em> files will be deleted after convertion. </p>
 <h2 id="metadata">Metadata</h2>
 <p><img alt="Add Metadata" src="../image/mint-metadata.png" title="Add metadata" /></p>
-<p>Metadata for the individual files can be edited in the <code>Metadata</code> tab. This data can be used to group results e.g. by batch or by label as well as types.</p>
+<p>Metadata for the individual files can be edited in the <code>Metadata</code> tab. This data can be used to group results e.g. by batch or by label as well as types.
+You want to edit metadata table to:</p>
 <ul>
-<li>Batch: The batch e.g. plate a particular sample belongs to.</li>
-<li>Label: A Label such as species.</li>
-<li>Type: Type of sample, e.g. biological sample, quality control sample, standards</li>
-<li>Concentration: For standards a concentration value can be provided. </li>
+<li>Select samples used for peak optimization by setting values in the column <code>PeakOpt</code> to <code>True</code>.</li>
+<li>Add batch labels to analyse for possible batch effects.</li>
+<li>Add labels to analyse for differences of different groups (e.g. treatment and control)</li>
+<li>Add types for different files e.g. biological sample, quality control sample, standards etc in order to include ore exclude certain types during analysis.</li>
+<li>Add other types of metadata. </li>
 </ul>
-<p>The metadata table can be downloaded modified e.g. with Excel and uploaded again. </p>
 <h2 id="peaklist">Peaklist</h2>
 <p><img alt="Peaklist" src="../image/mint-peaklist.png" title="Peaklist" /></p>
 <p>Peaklists are collection of peak definitions for the extraction of MS intensities beloning to individual metabolites. 
@@ -212,7 +213,7 @@ type has been defined in the type column of the metadata table. </p>
 <p>The checkbox can be used to create a dense view. If the box is unchecked the output will be
 visually grouped into an individual section for each metabolite.</p>
 <p><img alt="Quality Control" src="../image/mint-qc-1.png" title="Quality Control" /></p>
-<h2 id="heatmap">Heatmap</h2>
+<h2 id="analysis">Analysis</h2>
 <p>The interactive heatmap tool can be used to explore the results data after <code>RUN MINT</code>
 has been exectuted. The tool allows to explore the generated data in from of heatmaps.</p>
 <p><img alt="Heatmap" src="../image/mint-heatmap.png" title="Heatmap" /></p>
