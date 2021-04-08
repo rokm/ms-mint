@@ -105,6 +105,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#add-metabolites" class="nav-link">Add Metabolites</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#peak-optimization" class="nav-link">Peak Optimization</a>
               <ul class="nav flex-column">
               </ul>
@@ -146,7 +150,7 @@ optional arguments:
 </code></pre>
 <p>If the browser does not open automatically open it manually and navigate to <code>http://localhost:9999</code>. The app's frontend is build using <a href="https://plot.ly/dash/">Plotly-Dash</a> and runs locally in a browser. Thought, the Python functions provided can be imported and used in any Python project independently. The GUI is under active development and may be optimized in the future.</p>
 <h2 id="workspaces">Workspaces</h2>
-<p><img alt="GUI" src="../image/mint-workspace.png" title="The workspace tab" /></p>
+<p><img alt="GUI" src="../image/workspaces.png" title="The workspace tab" /></p>
 <p>A workspace is a container for project files that is separated from other workspaces. Through workspaces it is possible to work on different projects simultaneously. 
 All files relevant for one workspace are stored in a corresponding sub-folder of <code>--data-dir</code>, which by default is the folder MINT in the users home directory. 
 The home directory is different on different platforms. Under Windows watch out for <code>C:/Users/&lt;username&gt;/MINT</code>. 
@@ -154,7 +158,7 @@ The path to the active workspace is always displayed above the workspace tab.</p
 <p>To activate a particular workspace the workspace has to be selected in the table and then the <code>ACTIVATE</code> button has to be clicked. 
 <code>DELETE</code> will display a popup window upon confirmation the selected workspace with all corresponding files on the harddrive in <code>--data-dir</code> will be removed. </p>
 <h2 id="ms-files">MS-files</h2>
-<p><img alt="Add MS-files" src="../image/mint-ms-files.png" title="Added MS-files" /></p>
+<p><img alt="Add MS-files" src="../image/ms-files.png" title="Added MS-files" /></p>
 <p>Mass-Spec files (in <em>mzML</em> or <em>mzXML</em> format) can be added under the <code>MS-files</code> tab by drag and drop or by using the selection form. 
 Due to limitations of the Plotly-Dash framework only up to 10 files can be uploaded at a time. For larger projects, the files can simply 
 be copied manually into the ms-files subdirectory. This will be improved in future versions of MINT. </p>
@@ -163,7 +167,7 @@ be copied manually into the ms-files subdirectory. This will be improved in futu
 If files were added manually by copying into the ms-files subdirectory the files can be converted to feather format with the <code>CONVERT TO FEATHER</code> button.
 Note that <em>mzXML</em> and <em>mzML</em> files will be deleted after convertion. </p>
 <h2 id="metadata">Metadata</h2>
-<p><img alt="Add Metadata" src="../image/mint-metadata.png" title="Add metadata" /></p>
+<p><img alt="Add Metadata" src="../image/metadata.png" title="Add metadata" /></p>
 <p>Metadata for the individual files can be edited in the <code>Metadata</code> tab. This data can be used to group results e.g. by batch or by label as well as types.
 You want to edit metadata table to:</p>
 <ul>
@@ -174,11 +178,17 @@ You want to edit metadata table to:</p>
 <li>Add other types of metadata. </li>
 </ul>
 <h2 id="peaklist">Peaklist</h2>
-<p><img alt="Peaklist" src="../image/mint-peaklist.png" title="Peaklist" /></p>
+<p><img alt="Peaklist" src="../image/peaklist.png" title="Peaklist" /></p>
 <p>Peaklists are collection of peak definitions for the extraction of MS intensities beloning to individual metabolites. 
 Peaklists can be provided as Excel or CSV files. Peaklists are explained in more detail <a href="../peaklists/">here</a>.
 Files can be uploaded via the drag and drop area or the selection tool. The peaklist can be edited in place or
 with the peak optimization tools.</p>
+<h2 id="add-metabolites">Add Metabolites</h2>
+<ul>
+<li>Search for metabolites from ChEBI three stars database</li>
+<li>Add selected metabolites to peaklist (without RT estimation)</li>
+</ul>
+<p><img alt="Peaklist" src="../image/add-metabolites.png" title="Peak preview" /></p>
 <h2 id="peak-optimization">Peak Optimization</h2>
 <p>Retention times (RT) depend on the experiment and the specific chromatographic column used. 
 Additionally, aging of the column leads to drifts in RT that have to be accounted for. 
