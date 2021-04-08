@@ -113,7 +113,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#run-mint" class="nav-link">Run MINT</a>
+            <li class="nav-item" data-level="2"><a href="#processing" class="nav-link">Processing</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -150,6 +150,11 @@ optional arguments:
 </code></pre>
 <p>If the browser does not open automatically open it manually and navigate to <code>http://localhost:9999</code>. The app's frontend is build using <a href="https://plot.ly/dash/">Plotly-Dash</a> and runs locally in a browser. Thought, the Python functions provided can be imported and used in any Python project independently. The GUI is under active development and may be optimized in the future.</p>
 <h2 id="workspaces">Workspaces</h2>
+<ul>
+<li>Add new workspaces</li>
+<li>Delete workspaces</li>
+<li>Activate workspace </li>
+</ul>
 <p><img alt="GUI" src="../image/workspaces.png" title="The workspace tab" /></p>
 <p>A workspace is a container for project files that is separated from other workspaces. Through workspaces it is possible to work on different projects simultaneously. 
 All files relevant for one workspace are stored in a corresponding sub-folder of <code>--data-dir</code>, which by default is the folder MINT in the users home directory. 
@@ -158,6 +163,11 @@ The path to the active workspace is always displayed above the workspace tab.</p
 <p>To activate a particular workspace the workspace has to be selected in the table and then the <code>ACTIVATE</code> button has to be clicked. 
 <code>DELETE</code> will display a popup window upon confirmation the selected workspace with all corresponding files on the harddrive in <code>--data-dir</code> will be removed. </p>
 <h2 id="ms-files">MS-files</h2>
+<ul>
+<li>Import mass spectrometry files (MS-file) in mzXML or mzML format</li>
+<li>Convert file to feather format (other formats will be removed)</li>
+<li>Remove MS-files from workspace</li>
+</ul>
 <p><img alt="Add MS-files" src="../image/ms-files.png" title="Added MS-files" /></p>
 <p>Mass-Spec files (in <em>mzML</em> or <em>mzXML</em> format) can be added under the <code>MS-files</code> tab by drag and drop or by using the selection form. 
 Due to limitations of the Plotly-Dash framework only up to 10 files can be uploaded at a time. For larger projects, the files can simply 
@@ -167,9 +177,6 @@ be copied manually into the ms-files subdirectory. This will be improved in futu
 If files were added manually by copying into the ms-files subdirectory the files can be converted to feather format with the <code>CONVERT TO FEATHER</code> button.
 Note that <em>mzXML</em> and <em>mzML</em> files will be deleted after convertion. </p>
 <h2 id="metadata">Metadata</h2>
-<p><img alt="Add Metadata" src="../image/metadata.png" title="Add metadata" /></p>
-<p>Metadata for the individual files can be edited in the <code>Metadata</code> tab. This data can be used to group results e.g. by batch or by label as well as types.
-You want to edit metadata table to:</p>
 <ul>
 <li>Select samples used for peak optimization by setting values in the column <code>PeakOpt</code> to <code>True</code>.</li>
 <li>Add batch labels to analyse for possible batch effects.</li>
@@ -177,7 +184,15 @@ You want to edit metadata table to:</p>
 <li>Add types for different files e.g. biological sample, quality control sample, standards etc in order to include ore exclude certain types during analysis.</li>
 <li>Add other types of metadata. </li>
 </ul>
+<p><img alt="Add Metadata" src="../image/metadata.png" title="Add metadata" /></p>
+<p>Metadata for the individual files can be edited in the <code>Metadata</code> tab. This data can be used to group results e.g. by batch or by label as well as types.
+You want to edit metadata table to:</p>
 <h2 id="peaklist">Peaklist</h2>
+<ul>
+<li>Import peaklist from CSV file or add new peaks manually</li>
+<li>Rename peaks definitions or change parameters</li>
+<li>Delete peak definitions</li>
+</ul>
 <p><img alt="Peaklist" src="../image/peaklist.png" title="Peaklist" /></p>
 <p>Peaklists are collection of peak definitions for the extraction of MS intensities beloning to individual metabolites. 
 Peaklists can be provided as Excel or CSV files. Peaklists are explained in more detail <a href="../peaklists/">here</a>.
@@ -190,6 +205,10 @@ with the peak optimization tools.</p>
 </ul>
 <p><img alt="Peaklist" src="../image/add-metabolites.png" title="Peak preview" /></p>
 <h2 id="peak-optimization">Peak Optimization</h2>
+<ul>
+<li>Optimize retention times for all peaks or individual peaks</li>
+<li>Preview all peakshapes with quality indicator</li>
+</ul>
 <p>Retention times (RT) depend on the experiment and the specific chromatographic column used. 
 Additionally, aging of the column leads to drifts in RT that have to be accounted for. 
 The tools in the peak optimization tab can be used to quickly review all  peak definitions in 
@@ -199,12 +218,24 @@ the presently loaded peaklist. </p>
 coresponding chromatograms for all files. The peaks can be reviewed and modified one by one
 with the interactive tool. <code>FIND CLOSED PEAKS</code> iterates through all peak definitions and
 identifes the closest peak with respect to the expected RT which is displayed as black vertical line.</p>
+<h3 id="manual-interactive-peak-optimization">Manual (interactive) peak optimization</h3>
+<ul>
+<li>Optimize individual peaks one by one</li>
+<li>Find bad peaks</li>
+<li>Remove peaks from peaklist</li>
+<li>Set expected retention time</li>
+</ul>
 <p><img alt="Peaklist" src="../image/manual-peak-optimization.png" title="Peak preview" /></p>
 <p>When a peak is selected in the drop down box the chromatograms for the particular mass windows
 using the peak width as defined in the peaklist is extracted and displayed. The current rt window
 is visualized as green box. <code>SET RT TO CURRENT VIEW</code> will set the <em>rt_min</em> and <em>rt_max</em> values 
 to the current view and updated the peaklist accordingly.</p>
-<h2 id="run-mint">Run MINT</h2>
+<h2 id="processing">Processing</h2>
+<ul>
+<li>Run MINT and apply the extraction protocol to all files in the workspace</li>
+<li>Download results</li>
+<li>Reset results and start again</li>
+</ul>
 <p>When all peaks look good the data can be processed using <code>RUN MINT</code>. This will apply
 the current peaklist to the MS-files in the workspace and extract additional properties.
 When the results tables are present the results can be explored with the following tabs. 
