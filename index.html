@@ -34,7 +34,10 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem active">
-                                <a href="." class="nav-link">Background</a>
+                                <a href="." class="nav-link">MINT</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="background/" class="nav-link">Background</a>
                             </li>
                             <li class="navitem">
                                 <a href="install/" class="nav-link">Installation</a>
@@ -65,7 +68,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="install/" class="nav-link">
+                                <a rel="next" href="background/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -89,18 +92,6 @@
             
             <li class="nav-item" data-level="1"><a href="#metabolomics-integrator" class="nav-link">Metabolomics Integrator</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#what-is-lcms" class="nav-link">What is LCMS?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#processing-lcms-data" class="nav-link">Processing LCMS data</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#how-to-use-mint" class="nav-link">How to use MINT?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -113,48 +104,7 @@
 Metabolomics is the study of all metabolites (small chemical compounds) in a biological sample e.g. from bacteria or a human blood sample. 
 The metabolites can be used to define biomarkers used in medicine to find treatments for diseases or for the development of diagnostic tests 
 or for the identification of pathogens such as methicillin resistant <em>Staphylococcus aureus</em> (MRSA). </p>
-<p><img alt="" src="image/flowchart.png" /></p>
-<h2 id="what-is-lcms">What is LCMS?</h2>
-<p>A typical biological sample, such as human blood or agar with some kind of bacteria, can contain thousands of <a href="https://en.wikipedia.org/wiki/Metabolite">metabolites</a> such as 
-sugars, alcohols, amino acids, nucleotides and more. To meassure the composition of such a sample <a href="https://en.wikipedia.org/wiki/Mass_spectrometry">mass spectrometry</a> can be used. </p>
-<p>However, many metabolites share exact masses with other metabolites and therefore would be undistiguishable in the mass spectrometer. 
-Therefore, compounds are sorted using <a href="https://en.wikipedia.org/wiki/Column_chromatography">column chromatography</a> and spread out over time.
-The metabolites that enter the column at the same time interact with the column in different ways based on their specific stereochemistry. 
-These interactions let compounds move faster or slower through the column and therefore the compounds will elude at different times.
-That way various metabolites can be analysed successively over certain timeframe rather than simultaneously.</p>
-<p>The mass spectrometer that follows the chromatographic column meassures the masses given at each point in time and returns a time dependent spectrogram.
-An example of a LSMS meassurement is visualized in the following figure:</p>
-<p><img alt="" src="image/demo_Saureus_sample_raw.png" />
-_<strong>Figure 1:</strong> A 2D-histogram of a MS1 recorded intensities taken over time span of 10 minutes. Shown are m/z values between 100 and 600 [Da/z].</p>
-<p>If we zoom into this figure to a very narrow band of masses the traces of individual metabolites can be observed. The
-trace of succinate (or <a href="https://en.wikipedia.org/wiki/Succinic_acid">succinic acid</a>) is shown here: </p>
-<p><img alt="" src="image/demo_Saureus_sample_raw_succinate.png" />
-_<strong>Figure 2:</strong> A zoom into the 2D histogram shown in figure 1. </p>
-<p>This illustrates how dense and precise the information in a LCMS messurement is. For comparison the M/Z value of an electron is 5.489e-4.</p>
-<h2 id="processing-lcms-data">Processing LCMS data</h2>
-<p>After the data has been collected on a mass spectrometer (MS) and stored in a (usually) vendor specific format the data can be subjected to analysis.
-To process data with MINT the data has to be provided in an open format (mzML or mzXML).</p>
-<p>Instead of analysing the raw LCMS data it is common practise to deconvolute the data and sum up the signal of individual metabolites.
-The processed data should be proportional to the amount of metabolite in the sample. 
-However, the meassured intensities will not reflect the relative concentrations between different compounds, only between different samples.
-For example, due to different ion efficiences compound <strong>A</strong> might have a stronger signal than compound <strong>B</strong> even if the
-compound <strong>B</strong> is present at higher concentration. Therefore, the intensities can only be use to compare relative amounts. 
-To estimate absolute concentrations a calibration curve has to be created for every single metabolite.</p>
-<p>The binning transforms the semi-structured data into a structured format where each column stands for one particular metabolite.
-Often the data is normalized for each metabolite to reflect the relative intensities across multiple samples. 
-The structured data can then be subjected to common data anayses such as dimensionality reduction, or clustering analysis.</p>
-<p><img alt="" src="image/hierachical_clustering.png" />
-<em><strong>Figure 3:</strong> Clustering analysis for a small set of metabolites across 12 different samples including 3 different pathogens (EC: _E. coli</em>, SA: <em>S. aureus</em>, CA: <em>C. albicans</em>).</p>
-<h2 id="how-to-use-mint">How to use MINT?</h2>
-<p>The tool can be used for targeted analysis where the m/z-values (mass to charge ratios) and chromatographic retention times are known. 
-Alternatively, MINT can be used in an untargeted approach where new biomarkers can be explored without prior knowledge.</p>
-<p>MINT currently supports the open data formats mzML and mzXML. The main function is to extract and characterise measured 
-intensities in a given m/z and retention time (RT) window. These windows can be provided in form of a <a href="peaklists/">peaklist</a> 
-or created interactively in the <a href="gui/">GUI</a>. With this setup large numbers of LCMS-files can be processed automatically, 
-standardized and perfectly reproducible.</p>
-<p>The tool can be used with a browser based graphical user interface (GUI) implemented as interactive dashboard with 
-<a href="https://plot.ly/dash/">Plotly-Dash</a>. Alternatively, the <code>ms_mint</code> package can be imported as python library to be 
-integrated in any regular Python code as part of a larger processing pipeline or interacively in the <a href="jupyter/">Jupyter Notebook</a>.</p></div>
+<p><img alt="" src="image/flowchart.png" /></p></div>
             </div>
         </div>
 
@@ -238,5 +188,5 @@ integrated in any regular Python code as part of a larger processing pipeline or
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-04-09 00:54:18.569188+00:00
+Build Date UTC : 2021-04-09 00:56:08.423669+00:00
 -->
