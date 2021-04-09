@@ -34,7 +34,7 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem active">
-                                <a href="." class="nav-link">MINT</a>
+                                <a href="." class="nav-link">Home</a>
                             </li>
                             <li class="navitem">
                                 <a href="background/" class="nav-link">Background</a>
@@ -92,6 +92,10 @@
             
             <li class="nav-item" data-level="1"><a href="#metabolomics-integrator" class="nav-link">Metabolomics Integrator</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#how-to-use-mint" class="nav-link">How to use MINT?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -105,7 +109,17 @@ Metabolomics is the study of all metabolites (small chemical compounds) in a bio
 The metabolites can be used to define biomarkers used in medicine to find treatments for diseases or for the development of diagnostic tests 
 or for the identification of pathogens such as methicillin resistant <em>Staphylococcus aureus</em> (MRSA). </p>
 <p><img alt="" src="image/flowchart.png" />
-_<strong>Figure 1:</strong> Flowchart of MINT processing workflow. </p></div>
+_<strong>Figure 1:</strong> Flowchart of MINT processing workflow. </p>
+<h2 id="how-to-use-mint">How to use MINT?</h2>
+<p>The tool can be used for targeted analysis where the m/z-values (mass to charge ratios) and chromatographic retention times are known. 
+Alternatively, MINT can be used in an untargeted approach where new biomarkers can be explored without prior knowledge.</p>
+<p>MINT currently supports the open data formats mzML and mzXML. The main function is to extract and characterise measured 
+intensities in a given m/z and retention time (RT) window. These windows can be provided in form of a <a href="peaklists/">peaklist</a> 
+or created interactively in the <a href="gui/">GUI</a>. With this setup large numbers of LCMS-files can be processed automatically, 
+standardized and perfectly reproducible.</p>
+<p>The tool can be used with a browser based graphical user interface (GUI) implemented as interactive dashboard with 
+<a href="https://plot.ly/dash/">Plotly-Dash</a>. Alternatively, the <code>ms_mint</code> package can be imported as python library to be 
+integrated in any regular Python code as part of a larger processing pipeline or interacively in the <a href="jupyter/">Jupyter Notebook</a>.</p></div>
             </div>
         </div>
 
@@ -189,5 +203,5 @@ _<strong>Figure 1:</strong> Flowchart of MINT processing workflow. </p></div>
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-04-09 00:56:57.363540+00:00
+Build Date UTC : 2021-04-09 00:58:38.787127+00:00
 -->
