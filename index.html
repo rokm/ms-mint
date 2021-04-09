@@ -113,7 +113,7 @@
 Metabolomics is the study of all metabolites (small chemical compounds) in a biological sample e.g. from bacteria or a human blood sample. 
 The metabolites can be used to define biomarkers used in medicine to find treatments for diseases or for the development of diagnostic tests 
 or for the identification of pathogens such as methicillin resistant <em>Staphylococcus aureus</em> (MRSA). </p>
-<p><img alt="" src="image/MINT-flowchart.png" /></p>
+<p><img alt="" src="image/flowchart.png" /></p>
 <h2 id="what-is-lcms">What is LCMS?</h2>
 <p>A typical biological sample, such as human blood or agar with some kind of bacteria, can contain thousands of <a href="https://en.wikipedia.org/wiki/Metabolite">metabolites</a> such as 
 sugars, alcohols, amino acids, nucleotides and more. To meassure the composition of such a sample <a href="https://en.wikipedia.org/wiki/Mass_spectrometry">mass spectrometry</a> can be used. </p>
@@ -125,11 +125,11 @@ That way various metabolites can be analysed successively over certain timeframe
 <p>The mass spectrometer that follows the chromatographic column meassures the masses given at each point in time and returns a time dependent spectrogram.
 An example of a LSMS meassurement is visualized in the following figure:</p>
 <p><img alt="" src="image/demo_Saureus_sample_raw.png" />
-<em><strong>Figure 1:</strong> test bla bla</em></p>
+_<strong>Figure 1:</strong> A 2D-histogram of a MS1 recorded intensities taken over time span of 10 minutes. Shown are m/z values between 100 and 600 [Da/z].</p>
 <p>If we zoom into this figure to a very narrow band of masses the traces of individual metabolites can be observed. The
 trace of succinate (or <a href="https://en.wikipedia.org/wiki/Succinic_acid">succinic acid</a>) is shown here: </p>
 <p><img alt="" src="image/demo_Saureus_sample_raw_succinate.png" />
-<em><strong>Figure 2:</strong> test bla bla</em></p>
+_<strong>Figure 2:</strong> A zoom into the 2D histogram shown in figure 1. </p>
 <p>This illustrates how dense and precise the information in a LCMS messurement is. For comparison the M/Z value of an electron is 5.489e-4.</p>
 <h2 id="processing-lcms-data">Processing LCMS data</h2>
 <p>After the data has been collected on a mass spectrometer (MS) and stored in a (usually) vendor specific format the data can be subjected to analysis.
@@ -143,7 +143,7 @@ To estimate absolute concentrations a calibration curve has to be created for ev
 <p>The binning transforms the semi-structured data into a structured format where each column stands for one particular metabolite.
 Often the data is normalized for each metabolite to reflect the relative intensities across multiple samples. 
 The structured data can then be subjected to common data anayses such as dimensionality reduction, or clustering analysis.</p>
-<p><img alt="" src="image/demo_hierachical_clustering.png" />
+<p><img alt="" src="image/hierachical_clustering.png" />
 <em><strong>Figure 3:</strong> Clustering analysis for a small set of metabolites across 12 different samples including 3 different pathogens (EC: _E. coli</em>, SA: <em>S. aureus</em>, CA: <em>C. albicans</em>).</p>
 <h2 id="how-to-use-mint">How to use MINT?</h2>
 <p>The tool can be used for targeted analysis where the m/z-values (mass to charge ratios) and chromatographic retention times are known. 
@@ -238,5 +238,5 @@ integrated in any regular Python code as part of a larger processing pipeline or
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-04-09 00:46:51.125495+00:00
+Build Date UTC : 2021-04-09 00:54:18.569188+00:00
 -->
