@@ -104,6 +104,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#additional-packages" class="nav-link">Additional packages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -135,7 +139,12 @@ python3 -m twine upload --repository ms-mint dist/ms*mint-*
     proxy_read_timeout 86400;
 }
 </code></pre>
-<p>Then start MINT with <code>--serve-path='\mint\'</code>.</p></div>
+<p>Then start MINT with <code>--serve-path='\mint\'</code>.</p>
+<h2 id="additional-packages">Additional packages</h2>
+<p>To run tests and code optimization you need the
+following packages:</p>
+<pre><code>conda install flake8 pytest mkdocs
+</code></pre></div>
             </div>
         </div>
 
