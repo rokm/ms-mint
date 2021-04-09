@@ -120,7 +120,32 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#analysis" class="nav-link">Analysis</a>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#analysis" class="nav-link">Analysis</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#general-selection-elements" class="nav-link">General selection elements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#heatmap" class="nav-link">Heatmap</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#distributions" class="nav-link">Distributions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pca" class="nav-link">PCA</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#hierarchical-clustering" class="nav-link">Hierarchical clustering</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#plotting" class="nav-link">Plotting</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -192,7 +217,7 @@ You want to edit metadata table to:</p>
 <li>Rename peaks definitions or change parameters</li>
 <li>Delete peak definitions</li>
 </ul>
-<p><img alt="Peaklist" src="image/peaklist.png" title="Peaklist" /></p>
+<p><img alt="Peaklist" src="../image/peaklist.png" title="Peaklist" /></p>
 <p>Peaklists are collection of peak definitions for the extraction of MS intensities beloning to individual metabolites. 
 Peaklists can be provided as Excel or CSV files. Peaklists are explained in more detail <a href="../peaklists/">here</a>.
 Files can be uploaded via the drag and drop area or the selection tool. The peaklist can be edited in place or
@@ -240,19 +265,20 @@ to the current view and updated the peaklist accordingly.</p>
 the current peaklist to the MS-files in the workspace and extract additional properties.
 When the results tables are present the results can be explored with the following tabs. 
 The generated results can be downloaded with the <code>DOWNLOAD</code> button.</p>
-<h2 id="analysis">Analysis</h2>
+<h1 id="analysis">Analysis</h1>
 <p>After running MINT the results can be downloaed or analysed using the provided tools.
 For quality control purposes histograms and boxplots can be generated in the 
 quality control tab. The interactive heatmap tool can be used to explore the results data after <code>RUN MINT</code>
 has been exectuted. The tool allows to explore the generated data in from of heatmaps.</p>
-<h3 id="general-selection-elements">General selection elements</h3>
+<h2 id="general-selection-elements">General selection elements</h2>
 <ul>
 <li>Include/exclude file types (based on <code>Type</code> column in metadata)</li>
 <li>Include/exclude peak labels for analysis</li>
 <li>Set file sorting (e.g. by name, by batch etc.)</li>
 <li>Select group-by column for coloring and statistics</li>
 </ul>
-<h3 id="heatmap">Heatmap</h3>
+<p><img alt="Selections" src="../image/general-selection-elements.png" title="Selections" /></p>
+<h2 id="heatmap">Heatmap</h2>
 <p><img alt="Heatmap" src="../image/heatmap.png" title="Heatmap" /></p>
 <p>The first dropdown menu allows to include certain file types e.g. biological samples rather than quality control samples.
 The second dropdown menu distinguishes the how the heatmap is generated. </p>
@@ -264,8 +290,9 @@ The second dropdown menu distinguishes the how the heatmap is generated. </p>
 <li>Correlation: Calculate pearson correlation between columns.</li>
 <li>Show in new tab: The figure will be generated in a new independent tab. That way multiple heatmaps can be generated at the same time.</li>
 </ul>
-<p><img alt="Heatmap" src="./image/mint-heatmap-correlation.png" title="Correlation" /></p>
-<h3 id="distributions">Distributions</h3>
+<h3 id="correlation-of-scaled-peak_max">Correlation of (scaled) peak_max</h3>
+<p><img alt="Heatmap" src="../image/heatmap-correlation.png" title="Correlation" /></p>
+<h2 id="distributions">Distributions</h2>
 <ul>
 <li>Plot histograms</li>
 <li>Density distributions</li>
@@ -280,16 +307,16 @@ For example, the analysis can be limited to only the biological samples if such 
 type has been defined in the type column of the metadata table. </p>
 <p>The checkbox can be used to create a dense view. If the box is unchecked the output will be
 visually grouped into an individual section for each metabolite.</p>
-<h3 id="pca">PCA</h3>
+<h2 id="pca">PCA</h2>
 <ul>
 <li>Perform Principal Component Analysis (PCA)</li>
 <li>Plot projections to first N principal components</li>
 <li>Contributions of original variables to each component.</li>
 </ul>
 <p><img alt="PCA" src="../image/pca.png" title="Principal Components Analysis" /></p>
-<h3 id="hierarchical-clustering">Hierarchical clustering</h3>
+<h2 id="hierarchical-clustering">Hierarchical clustering</h2>
 <p><img alt="Hierarchical clustering" src="../image/hierarchical_clustering.png" title="Hierarchical clustering" /></p>
-<h3 id="plotting">Plotting</h3>
+<h2 id="plotting">Plotting</h2>
 <p>MINT comes with a flexible and powerful plotting interface that is based on the powerful <a href="http://seaborn.pydata.org/">Seaborn</a> library.</p>
 <ul>
 <li>Bar plots</li>
@@ -298,7 +325,7 @@ visually grouped into an individual section for each metabolite.</p>
 <li>Scatter plots</li>
 <li>and more...</li>
 </ul>
-<p><img alt="Plot setting" src="image/plotting_settings.png" title="Plot settings" /></p>
+<p><img alt="Plot setting" src="../image/plotting_settings.png" title="Plot settings" /></p>
 <p><img alt="Bar plot" src="../image/plotting_results_bar.png" title="Bar plot" /></p>
 <p><img alt="Boxen plot" src="../image/plotting_results_boxen.png" title="Boxen plot" /></p></div>
             </div>
