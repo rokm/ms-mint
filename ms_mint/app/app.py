@@ -33,6 +33,8 @@ from . import processing
 from . import add_metab
 from . import analysis
 from . import messages
+from . import auth
+from . import database
 
 import dash_uploader as du
 from tempfile import gettempdir
@@ -91,6 +93,21 @@ app.css.config.serve_locally = True
 app.scripts.config.serve_locally = True
 
 
+## Authentication
+database.ConnectDB(TMPDIR, app)
+
+server = app.server
+login_manager = auth.LoginManager()
+login_manager.init_app(server)
+
+# callback to reload the user object
+@login_manager.user_loader
+def load_user(user_id):
+    return database.Users.query.get(int(user_id))
+
+auth.callbacks(app)
+
+
 UPLOAD_FOLDER_ROOT = gettempdir()
 du.configure_upload(app, UPLOAD_FOLDER_ROOT)
 
@@ -107,6 +124,8 @@ app.config['suppress_callback_exceptions'] = True
 app.layout = html.Div([
     #html.Img(src=app.get_asset_url('logo.png'), style={'height': '30px'}),
 
+    auth._layout,
+
     dcc.Interval(id="progress-interval", n_intervals=0, interval=500, disabled=False),
 
     html.A(href='https://soerendip.github.io/ms-mint/gui/', 
@@ -122,7 +141,6 @@ app.layout = html.Div([
     messages.layout(),
 
     Download(id='res-download-data'),
-
 
     html.Div(id='tmpdir', children=TMPDIR, style={'visibility': 'hidden'}),
 

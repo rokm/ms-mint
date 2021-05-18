@@ -19,7 +19,7 @@ except:
 
 MS_FILE_COLUMNS = ['scan_id', 'ms_level', 'polarity', 'scan_time_min', 'mz', 'intensity']
 
-@lru_cache(500)
+@lru_cache(100)
 def ms_file_to_df(fn, read_only:bool=False):
     fn = str(fn)
     if fn.lower().endswith('.mzxml'):
@@ -150,15 +150,13 @@ extract_mzml = np.vectorize( _extract_mzml )
 
 def read_parquet(fn, read_only=False):
     df = pd.read_parquet(fn)
-
     if read_only or (len(df.columns) == len(MS_FILE_COLUMNS) and all(df.columns == MS_FILE_COLUMNS)):
         return df
     else:
-        format_thermo_raw_file_reader_parquet(df)
+        return format_thermo_raw_file_reader_parquet(df)
 
 
 def format_thermo_raw_file_reader_parquet(df):
-
     df = df[['ScanNumber', 'MsOrder', 'RetentionTime', 'Intensities', 'Masses']]\
            .set_index(['ScanNumber', 'MsOrder', 'RetentionTime', ])\
            .apply(pd.Series.explode)\
@@ -172,8 +170,6 @@ def format_thermo_raw_file_reader_parquet(df):
     df['intensity'] = df.intensity.astype(np.float64)
     df = df[MS_FILE_COLUMNS]
     return df
-
-
 
 
 def mzmlb_to_df__pyteomics(fn, read_only=False):

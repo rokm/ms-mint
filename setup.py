@@ -44,7 +44,10 @@ install_requires = [
     'filelock',
     'wget',
     'bs4',
-    'pytest-cov']
+    'pytest-cov',
+    'flask_sqlalchemy',
+    'flask_login'
+    ]
 
 
 config = {

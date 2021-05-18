@@ -101,7 +101,7 @@ _layout = html.Div([
                 }),
                 
     html.Button('Import from URL or local path', id='ms-import-from-url'),
-    dcc.Input(id='url', placeholder='Drop URL / path here', style={'width': '100%'}),
+    dcc.Input(id='download-url', placeholder='Drop URL / path here', style={'width': '100%'}),
     dcc.Markdown('---', style={'marginTop': '10px'}),
     dcc.Markdown('##### Actions'),
     html.Button('Convert to Feather', id='ms-convert'),
@@ -247,7 +247,7 @@ def callbacks(app, fsc, cache):
     @app.callback(
         Output({'index': 'ms-import-from-url-output', 'type': 'output'}, 'children'),
         Input('ms-import-from-url', 'n_clicks'),
-        State('url', 'value'),
+        State('download-url', 'value'),
         State('wdir', 'children')
     )
     def import_from_url_or_path(n_clicks, url, wdir):
