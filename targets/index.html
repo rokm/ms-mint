@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Soren Wacker">
-        <link rel="canonical" href="https://github.com/sorenwacker/ms-mint/peaklists/">
+        <link rel="canonical" href="https://github.com/sorenwacker/ms-mint/targets/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Targets - MINT</title>
+        <title>Target lists - MINT</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -45,8 +45,8 @@
                             <li class="navitem">
                                 <a href="../gui/" class="nav-link">GUI</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Targets</a>
+                            <li class="navitem">
+                                <a href="../peaklists.md" class="nav-link">Targets</a>
                             </li>
                             <li class="navitem">
                                 <a href="../jupyter/" class="nav-link">Jupyter</a>
@@ -65,16 +65,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../gui/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../jupyter/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -93,7 +83,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#peaklists" class="nav-link">Peaklists</a>
+            <li class="nav-item" data-level="1"><a href="#target-lists" class="nav-link">Target lists</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -102,20 +92,25 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="peaklists">Peaklists</h1>
-<p>A peaklist contains the definitions of peaks to be extracted. It is the protocol that captures how data is going to be extracted from the MS-files. It is provided as <code>csv</code> (comma separated values) or <code>xlsx</code> (Microsoft Excel) file. Each row defines a peak-window. If a multi-sheet xlsx file can be used the peaklist should be the first sheet.</p>
-<p>A window is defined by five properties that need to be present as headers in the peaklist file:</p>
+<h1 id="target-lists">Target lists</h1>
+<p>A target list contains the definitions of peaks to be extracted in terms of retention time and mz value. The important parameters for MINT are <code>rt_min</code> and <code>rt_max</code>. The <code>rt</code> value is only used as an estimate and used for comparison. You should know, from former identification runs, at what retention time to expect a certain metabolite. This is what <code>rt</code> is for. For the final extraction process however <code>rt_min</code> and <code>rt_max</code> are used. Before you process the MS files, you should check that all targts have <code>rt_min</code> and <code>rt_max</code> properly set. </p>
+<h3 id="target-list-format">Target list format</h3>
+<p>The target list is the determining protocol for the data processing step. You can reproduce all results using this list as input. A target list can be provided as <code>csv</code> (comma separated values) or <code>xlsx</code> (Microsoft Excel) file. </p>
+<blockquote>
+<p>If the preaklist is provided as multi-sheet xlsx file the target list should be the first sheet.</p>
+</blockquote>
+<p>The input files contains a number of columns headers in the target list should contain:</p>
 <ul>
 <li><strong>peak_label</strong> : A <strong>unique</strong> identifier such as the biomarker name or ID. Even if multiple peaklist files are used, the label have to be unique across all the files.</li>
 <li><strong>mz_mean</strong> : The target mass (m/z-value) in [Da].</li>
 <li><strong>mz_width</strong> : The width of the peak in the m/z-dimension in units of ppm. The window will be <em>mz_mean</em> +/- (mz_width * mz_mean * 1e-6). Usually, a values between 5 and 10 are used.</li>
-<li><strong>rt</strong> : Estimated retention time in [min].</li>
+<li><strong>rt</strong> : Estimated retention time in [min] (optional, see above).</li>
 <li><strong>rt_min</strong> : The start of the retention time for each peak in [min].</li>
 <li><strong>rt_max</strong> : The end of the retention time for each peak in [min].</li>
 <li><strong>intensity_threshold</strong> : A threshold that is applied to filter noise for each window individually. Can be set to 0 or any positive value.</li>
 </ul>
 <h4 id="example-file">Example file</h4>
-<p><strong>peaklist.csv:</strong></p>
+<p><strong>target.csv:</strong></p>
 <pre><code class="language-text">peak_label,mz_mean,mz_width,rt_min,rt_max,intensity_threshold
 Biomarker-A,151.0605,10,4.65,5.2,0
 Biomarker-B,151.02585,10,4.18,4.53,0
